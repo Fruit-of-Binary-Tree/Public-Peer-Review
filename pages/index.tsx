@@ -3,6 +3,7 @@ import Login from './Login'
 import Head from 'next/head'
 
 
+
 const Home: NextPage = () => {
   return (
     <div className=''>

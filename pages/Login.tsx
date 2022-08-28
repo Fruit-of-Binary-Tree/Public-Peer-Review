@@ -1,28 +1,56 @@
-import React, { useState } from 'react'
+import React, { useState ,useCallback} from 'react'
 import {auth, signInWithGoogle} from '../firebase-config' 
 import {FaGoogle, FaRegEnvelope} from 'react-icons/fa'
 import {MdLockOutline} from 'react-icons/md'
+
+
 import {
+  getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
+
+import { useRouter } from 'next/router'
+
+
 function Login() {
 
   const [loginEmail, setLoginEmail] = useState ("");
   const [loginPassword, setLoginPassword] = useState ("");
 
   const [user, setUser] = useState({});
+  const router = useRouter()
+
+  
+   
+  
  
 
-
+  
   const login = async () => {
     
-    const user = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword);
-    console.log(user);
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log("success");
+        router.push('/Home');
+        
+
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+      
+      
     
   };
+  
   
   return (
     <div className=" flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100
@@ -54,7 +82,7 @@ function Login() {
                     <MdLockOutline className='text-gray-400 mr-2'/>
                     <input type="password" name='password' placeholder='Password'onChange={(event) => {setLoginPassword(event.target.value)}} className='bg-gray-100 outline-none text-sm flex-1'></input>
                   </div>
-                  <a href='./Home' onClick={login} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
+                  <a href='#' onClick={login} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
                     hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Login</a>    
             </div> 
           <h4> User logged in:</h4>
