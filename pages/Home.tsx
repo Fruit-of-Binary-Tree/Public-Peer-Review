@@ -46,7 +46,8 @@ function Home() {
             
 
             </div>
-             
+            <a href='/Login'  className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 mt-2 inline-block font-semibold 
+                    hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>logout</a> 
             </div>
           
         </div>
