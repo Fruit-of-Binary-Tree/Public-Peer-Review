@@ -1,15 +1,16 @@
 import React, { useState ,useCallback} from 'react'
-import {auth, signInWithGoogle} from '../firebase-config' 
 import {FaGoogle, FaRegEnvelope} from 'react-icons/fa'
 import {MdLockOutline} from 'react-icons/md'
 
-
+import { auth, provider } from "../firebase-config"
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  GoogleAuthProvider,
+  signInWithPopup
 } from "firebase/auth";
 
 import { useRouter } from 'next/router'
@@ -23,12 +24,6 @@ function Login() {
   const [user, setUser] = useState({});
   const router = useRouter()
 
-  
-   
-  
- 
-
-  
   const login = async () => {
     
     const auth = getAuth();
@@ -45,11 +40,20 @@ function Login() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-      });
-      
-      
+      }); 
     
   };
+
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, provider).then((result) => {
+      console.log(result);
+      router.push('/Home');
+    }).catch((error) => {
+      console.log(error);
+    });
+  };
+
+    
   
   
   return (
@@ -70,7 +74,7 @@ function Login() {
                  <p className='border-2 border-gray-200 rounded-full p-3 mx-1 mr-3'>
                 <FaGoogle className='text-sm'/>
                 </p>  
-                <a href='#' onClick={signInWithGoogle} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
+                <a href='#'  onClick={signInWithGoogle} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
                     hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Login with Google</a>       
             </div>
             <div className='flex flex-col items-center'>
