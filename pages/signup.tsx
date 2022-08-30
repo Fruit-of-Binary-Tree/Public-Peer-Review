@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+import {auth} from '../firebase-config' 
 import {FaRegEnvelope, FaUser} from 'react-icons/fa'
 import {MdLockOutline} from 'react-icons/md'
 
 export default function signup() {
+
+  const [registerEmail, setRegisterEmail] = useState ("");
+  const [registerPassword, setRegisterPassword] = useState ("");
+
+  const register = async () => {
+    
+    const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+    console.log(user);
+    
+  };
+
   return (
     <div className=" flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100
     w-full h-full bg-no-repeat bg-cover bg-[url('https://cdn.pixabay.com/photo/2016/03/09/15/29/books-1246674_1280.jpg')]">
@@ -37,19 +55,23 @@ export default function signup() {
                   </div>
                   <div className='bg-gray-100 w-64 p-2 flex items-center mb-3'>
                     <FaRegEnvelope className='text-gray-400 mr-2'/>
-                    <input type="password" name='password' placeholder='Email' className='bg-gray-100 outline-none text-sm flex-1'></input>
+                    <input type="password" name='password' placeholder='Email' onChange={(event) => {setRegisterEmail(event.target.value)}} className='bg-gray-100 outline-none text-sm flex-1'></input>
                   </div>
                   <div className='bg-gray-100 w-64 p-2 flex items-center mb-3'>
                     <MdLockOutline className='text-gray-400 mr-2'/>
-                    <input type="password" name='password' placeholder='Password' className='bg-gray-100 outline-none text-sm flex-1'></input>
+                    <input type="password" name='password' placeholder='Password' onChange={(event) => {setRegisterPassword(event.target.value)}} className='bg-gray-100 outline-none text-sm flex-1'></input>
                   </div>
                   <div className='bg-gray-100 w-64 p-2 flex items-center mb-3'>
                     <MdLockOutline className='text-gray-400 mr-2'/>
                     <input type="password" name='password' placeholder='Password Confirmation' className='bg-gray-100 outline-none text-sm flex-1'></input>
                   </div>
-                  <a href="#" className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 mt-2 inline-block font-semibold 
-                    hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Sign Up</a>    
+                  <button onClick={register} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 mt-2 inline-block font-semibold 
+                    hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Sign Up</button>    
             </div> 
+
+            <h4> User Logged in:</h4>
+          
+
 
             
 

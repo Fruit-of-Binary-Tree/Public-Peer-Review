@@ -1,8 +1,61 @@
-import React from 'react'
+import React, { useState ,useCallback} from 'react'
 import {FaGoogle, FaRegEnvelope} from 'react-icons/fa'
 import {MdLockOutline} from 'react-icons/md'
 
+import { auth, provider } from "../firebase-config"
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "firebase/auth";
+
+import { useRouter } from 'next/router'
+
+
 function Login() {
+
+  const [loginEmail, setLoginEmail] = useState ("");
+  const [loginPassword, setLoginPassword] = useState ("");
+
+  const [user, setUser] = useState({});
+  const router = useRouter()
+
+  const login = async () => {
+    
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log("success");
+        router.push('/Home');
+        
+
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      }); 
+    
+  };
+
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, provider).then((result) => {
+      console.log(result);
+      router.push('/Home');
+    }).catch((error) => {
+      console.log(error);
+    });
+  };
+
+    
+  
+  
   return (
     <div className=" flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100
     w-full h-full bg-no-repeat bg-cover bg-[url('https://cdn.pixabay.com/photo/2016/03/09/15/29/books-1246674_1280.jpg')]">
@@ -20,21 +73,24 @@ function Login() {
                 <div className='flex justify-center p-3 mb-1'>
                  <p className='border-2 border-gray-200 rounded-full p-3 mx-1 mr-3'>
                 <FaGoogle className='text-sm'/>
-                </p>
-                <p className='py-2'>Sign in with Google</p>          
+                </p>  
+                <a href='#'  onClick={signInWithGoogle} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
+                    hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Login with Google</a>       
             </div>
             <div className='flex flex-col items-center'>
                   <div className='bg-gray-100 w-64 p-2 flex items-center mb-3'>
                     <FaRegEnvelope className='text-gray-400 mr-2'/>
-                    <input type="email" name='email' placeholder='Email' className='bg-gray-100 outline-none text-sm flex-1'></input>
+                    <input type="email" name='email' placeholder='Email' onChange={(event) => {setLoginEmail(event.target.value)}} className='bg-gray-100 outline-none text-sm flex-1'></input>
                   </div>
                   <div className='bg-gray-100 w-64 p-2 flex items-center mb-4'>
                     <MdLockOutline className='text-gray-400 mr-2'/>
-                    <input type="password" name='password' placeholder='Password' className='bg-gray-100 outline-none text-sm flex-1'></input>
+                    <input type="password" name='password' placeholder='Password'onChange={(event) => {setLoginPassword(event.target.value)}} className='bg-gray-100 outline-none text-sm flex-1'></input>
                   </div>
-                  <a href="#" className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
+                  <a href='#' onClick={login} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
                     hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Login</a>    
             </div> 
+          <h4> User logged in:</h4>
+            
 
             </div>
              
