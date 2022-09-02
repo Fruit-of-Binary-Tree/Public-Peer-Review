@@ -26,6 +26,5 @@ pnpm create next-app --example with-tailwindcss with-tailwindcss-app
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
-!https://circleci.com/<gh>/<Fruit-of-Binary-TreeE>/<Public-Peer-Review
->.svg?style=svg!:<https://app.circleci.com/pipelines/github/Fruit-of-Binary-Tree/Public-Peer-Review?branch=main>
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Fruit-of-Binary-Tree/Public-Peer-Review/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Fruit-of-Binary-Tree/Public-Peer-Review/tree/main)
 
