@@ -32,6 +32,7 @@ jobs:
             name: "Setup custom environment variables"
             command: echo 'export MY_ENV_VAR="e0556b3d-ddeb-4505-88af-0c41e6f50611"' >> $BASH_ENV
         - codecov/upload:
+            file: './codecov'
             token:  MY_ENV_VAR
               
 workflows:
