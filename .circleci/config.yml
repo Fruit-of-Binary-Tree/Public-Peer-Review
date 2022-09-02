@@ -1,7 +1,5 @@
 version: 2.1
 
-orbs:
-  codecov: codecov/codecov@3.0.0
 
 # Define the jobs we want to run for this project
 jobs:
@@ -25,10 +23,7 @@ jobs:
       - run:
           name: test
           command: npm run test 
-      - codecov/upload:
-          token: e0556b3d-ddeb-4505-88af-0c41e6f50611 
-          validate_url: true 
-          upload_name: codecov/upload     
+          
                    
 
  
