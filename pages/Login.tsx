@@ -53,7 +53,10 @@ function Login() {
     });
   };
 
-    
+  //code for google login buttton
+
+ // <p href='#'  onClick={signInWithGoogle} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
+ // hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Login with Google</p>   
   
   
   return (
@@ -67,16 +70,20 @@ function Login() {
               <span className='text-cyan-600 text-3xl'>Genius</span>
               <span className='text-black text-3xl'>Reviews</span>
               </div>
-              <div className='py-10'>
+              <div className='py-7'>
                 <h2 className='text-3 font-bold mb-2 text-cyan-600'>Sign in to Account</h2>
                 <div className="border-2 w-10 inline-block border-cyan-600 mb-4"></div>
                 <div className='flex justify-center p-3 mb-1'>
-                 <p className='border-2 border-gray-200 rounded-full p-3 mx-1 mr-3'>
+                 <a href="#" onClick={signInWithGoogle} className='border-2 border-gray-200 rounded-full p-3 mx-1 mr-3'>
                 <FaGoogle className='text-sm'/>
-                </p>  
-                <a href='#'  onClick={signInWithGoogle} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
-                    hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Login with Google</a>       
+                </a>  
+                <p className='px-4 py-2 inline-block '>Login with Google</p>     
             </div>
+
+            <div className='py-1 mb-3'>
+              <p className=''>Or sign in with email account</p>
+            </div>
+
             <div className='flex flex-col items-center'>
                   <div className='bg-gray-100 w-64 p-2 flex items-center mb-3'>
                     <FaRegEnvelope className='text-gray-400 mr-2'/>
@@ -89,7 +96,6 @@ function Login() {
                   <a href='#' onClick={login} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
                     hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Login</a>    
             </div> 
-          <h4> User logged in:</h4>
             
 
             </div>
@@ -114,3 +120,4 @@ function Login() {
 }
 
 export default Login
+
