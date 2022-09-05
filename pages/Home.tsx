@@ -1,8 +1,16 @@
 import React, { useState } from 'react'
-import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import {auth} from '../firebase-config' 
-import {FaGoogle, FaRegEnvelope} from 'react-icons/fa'
-import {MdLockOutline} from 'react-icons/md'
+import Header from '../components/Header';
+import PostBox from '../components/PostBox';
+import { useRouter } from 'next/router';
+
+
+
+/*
+
+
+*/
 
 function Home() {
 
@@ -11,50 +19,48 @@ function Home() {
 
   const [user, setUser] = useState({});
  
-
-
+  const router = useRouter()
+  
   const login = async () => {
     
-    const user = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword);
-    console.log(user);
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log("success");
+        router.push('/Home');
+        
+
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      }); 
     
   };
+  
 
   
   return (
-    <div className=" flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100
-    w-full h-full bg-no-repeat bg-cover bg-[url('https://cdn.pixabay.com/photo/2016/03/09/15/29/books-1246674_1280.jpg')]">
+    <div className=" absolute w-full bg-amber-200">
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center "> 
-      <div className="bg-white rounded-2xl shadow-2xl flex w-2/3 max-w-4xl">
-          <div className="w-3/5 p-5">
-            <div className='text-left font-bold'>
-              <span className='text-cyan-600 text-3xl'>Genius</span>
-              <span className='text-black text-3xl'>Reviews</span>
-              </div>
-              <div className='py-10'>
-                <h2 className='text-3 font-bold mb-2 text-cyan-600'>What would you like to do?</h2>
-                <div className="border-2 w-10 inline-block border-cyan-600 mb-4"></div>
-                <div className='flex justify-center p-3 mb-1'>
-                <a href='#' className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
-                    hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Create new entry for new paper</a>
+      <Header />
+      <div className='flex items-center justify-center space-x-2 border bg-cyan-600 py-1 px-3'>
+      </div>
 
-                <a href='#' className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 
-                    hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Rate an existing paper</a>                
-            </div>
-            
-            
+      <div className='flex items-center justify-center space-x-2 border bg-zinc-300 py-1 px-3'>
+        <p className=' flex text-center text-lg text-bold text-cyan-600'>
+          Welcome to Genius Reviews, post your academic work and let your peers give you feedback
+        </p>
+      </div>
 
-            </div>
-            <a href='/Login'  className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 mt-2 inline-block font-semibold 
-                    hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>logout</a> 
-            </div>
-          
-        </div>
+      <PostBox/>
 
-      </main>
 
-  
+      <img src='https://wallpaperbat.com/img/41158-favorite-math-wallpaper-math.jpg' 
+      className='w-full h-full relative mix-blend-overlay brightness-200 opacity-30'/> 
       
     </div>
   )
