@@ -8,6 +8,7 @@ import { auth } from '../firebase-config';
 
 function Header() {
 
+  //initialise variables
     const [loginEmail, setLoginEmail] = useState ("");
     const [loginPassword, setLoginPassword] = useState ("");
 
@@ -15,13 +16,14 @@ function Header() {
  
     const router = useRouter()
 
+    //logout function with Google Auth
     const logout = async () => {
     
     
         await signOut(auth)
         .then((userCredential) => {
           console.log("success");
-          router.push('/Login');
+          router.push('/Login');  //On successful logout, user will be directed to login page
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -34,16 +36,18 @@ function Header() {
   return (
     <div className='sticky top-0 z-50 flex justify-between bg-zinc-300 px-4 py-2 shadow-sm '>
         <div className='text-left mx- 10 font-bold'>
+            {/*Title*/}
             <span className='text-cyan-600 text-2xl'>Genius</span>
             <span className='text-black text-2xl'>Reviews</span>
         </div>
 
+         {/* Home icon and styling used for refreshing page */}
         <div className='text-cyan-600 flex items-center px-7 mr-8'>
             <FaHome className='h-6 w-6'/>
             <p className='ml-1 text-lg'>Home</p>
         </div>
 
-        {/* Search box */}
+        {/* Search box*/}
         <div className='flex-grow'>
             <form className='flex items-center space-x-2 border border-cyan-600 rounded-lg
             bg-gray-100 py-1 px-3'>
@@ -54,10 +58,12 @@ function Header() {
 
         </div>
 
+        {/* Setting icon and styling used to edit user's details */}
         <div className='flex items-center px-3 ml-8'>
         <FiSettings className='h-6 w-6 text-cyan-600  '/>
         </div>
 
+         {/* Logout button and styling, onClick will call logout function */}
         <div className='flex items-center px-2'>
            <button onClick={logout} className='text-cyan-600 flex items-end text-lg' >Signout</button>  
         </div>

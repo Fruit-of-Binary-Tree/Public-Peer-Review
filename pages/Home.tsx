@@ -6,14 +6,9 @@ import PostBox from '../components/PostBox';
 import { useRouter } from 'next/router';
 
 
-
-/*
-
-
-*/
-
 function Home() {
 
+  //initialise variables
   const [loginEmail, setLoginEmail] = useState ("");
   const [loginPassword, setLoginPassword] = useState ("");
 
@@ -21,6 +16,7 @@ function Home() {
  
   const router = useRouter()
   
+  //Users login session
   const login = async () => {
     
     const auth = getAuth();
@@ -46,7 +42,7 @@ function Home() {
   return (
     <div className=" absolute w-full bg-amber-200">
 
-      <Header />
+      <Header /> {/*Header component containing Search, logout, title and user settings */}
       <div className='flex items-center justify-center space-x-2 border bg-cyan-600 py-1 px-3'>
       </div>
 
@@ -56,9 +52,8 @@ function Home() {
         </p>
       </div>
 
-      <PostBox/>
-
-
+      <PostBox/> {/*Postbox functions for future document posts/}
+      {/*background image with styling*/}
       <img src='https://wallpaperbat.com/img/41158-favorite-math-wallpaper-math.jpg' 
       className='w-full h-full relative mix-blend-overlay brightness-200 opacity-30'/> 
       

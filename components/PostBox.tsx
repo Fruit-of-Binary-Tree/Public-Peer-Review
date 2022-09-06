@@ -6,6 +6,7 @@ type FormData = {
   postDescription: string
   tagSection: string
 }
+{/*Under construction*/}
 
 function PostBox() {
   const{
