@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import {FaHome, FaSearch} from 'react-icons/fa'
 import {FiSettings} from 'react-icons/fi'
-import { auth } from '../firebase-config';
+import { auth } from '../firebase-config.js';
 
 
 function Header() {

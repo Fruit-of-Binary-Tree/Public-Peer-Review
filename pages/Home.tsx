@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import {auth} from '../firebase-config' 
+import {auth} from '../firebase-config.js' 
 import Header from '../components/Header';
-import PostBox from '../components/PostBox';
 import { useRouter } from 'next/router';
 
 
@@ -40,7 +39,7 @@ function Home() {
 
   
   return (
-    <div className=" absolute w-full bg-amber-200">
+    <div className="relative bg-zinc-300">
 
       <Header /> {/*Header component containing Search, logout, title and user settings */}
       <div className='flex items-center justify-center space-x-2 border bg-cyan-600 py-1 px-3'>
@@ -52,13 +51,20 @@ function Home() {
         </p>
       </div>
 
-      <PostBox/> {/*Postbox functions for future document posts/}
-      {/*background image with styling*/}
-      <img src='https://wallpaperbat.com/img/41158-favorite-math-wallpaper-math.jpg' 
-      className='w-full h-full relative mix-blend-overlay brightness-200 opacity-30'/> 
       
+      <div className='flex bg-transparent justify-center  items-center py-3 px-2 '>
+        <a href='./Post' 
+              className='border-2 text-cyan-600 border-cyan-600 rounded-md mt-2 px-12 py-2 inline-block font-semibold
+              hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Create a Post</a>  
+      </div>
+
+      {/*background image with styling*/}
+     <img src='https://wallpaperbat.com/img/41158-favorite-math-wallpaper-math.jpg' 
+     className=' w-full h-full object-cover bg-no-repeat bg-cover mix-blend-overlay brightness-200 opacity-30'/> 
+
     </div>
   )
 }
 
 export default Home
+

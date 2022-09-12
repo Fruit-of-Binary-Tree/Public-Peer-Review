@@ -1,7 +1,7 @@
 import React, { useState ,useCallback} from 'react'
 import {FaGoogle, FaRegEnvelope} from 'react-icons/fa'
 import {MdLockOutline} from 'react-icons/md'
-import { auth, provider } from "../firebase-config"
+import { auth, provider } from "../firebase-config.js"
 
 //imports for Google authentication
 import {
