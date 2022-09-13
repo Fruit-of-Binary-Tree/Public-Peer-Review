@@ -1,14 +1,14 @@
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import React, { useState ,useCallback} from 'react'
 import {FaGoogle, FaRegEnvelope} from 'react-icons/fa'
 import {MdLockOutline} from 'react-icons/md'
 import { auth, provider } from "../firebase-config.js"
-=======
+/*=======
 import React, { useState, useCallback } from 'react'
 import { FaGoogle, FaRegEnvelope } from 'react-icons/fa'
 import { MdLockOutline } from 'react-icons/md'
 import { auth, provider } from "../firebase-config"
->>>>>>> 97652314e43e677fe1d8c355fa54016f5a3e0add
+>>>>>>> 97652314e43e677fe1d8c355fa54016f5a3e0add*/
 
 //imports for Google authentication
 import {
