@@ -1,15 +1,15 @@
 import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import {FaHome, FaSearch} from 'react-icons/fa'
 import {FiSettings} from 'react-icons/fi'
 import { auth } from '../firebase-config.js';
-=======
-import { FaHome, FaSearch } from 'react-icons/fa'
-import { FiSettings } from 'react-icons/fi'
-import { auth } from '../firebase-config';
->>>>>>> 97652314e43e677fe1d8c355fa54016f5a3e0add
+//=======
+//import { FaHome, FaSearch } from 'react-icons/fa'
+//import { FiSettings } from 'react-icons/fi'
+//import { auth } from '../firebase-config';
+//>>>>>>> 97652314e43e677fe1d8c355fa54016f5a3e0add
 
 
 function Header() {
