@@ -39,7 +39,8 @@ function getPapers(){
       <h2> <b>List:</b></h2>
       <ul>
         {papers.map(paper => (
-            <li key={paper.id}> <b>Author:</b> {paper.data.author} | <b>Title:</b> {paper.data.title} | <b>URL:</b> {paper.data.url} </li>
+            <li key={paper.id}> <b>Title:</b> {paper.data.title}<br/>
+            &ensp; <b>Author:</b> {paper.data.author} | <b> URL:</b> {paper.data.url} </li> 
             ))}
       </ul>
     </div>
