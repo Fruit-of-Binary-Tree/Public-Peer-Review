@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWith
 import {auth} from '../firebase-config.js' 
 import Header from '../components/Header';
 import { useRouter } from 'next/router';
-
+import List from '../components/List'
 
 function Home() {
 
@@ -58,6 +58,7 @@ function Home() {
               hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Create a Post</a>  
       </div>
 
+      <List />
       {/*background image with styling*/}
      <img src='https://wallpaperbat.com/img/41158-favorite-math-wallpaper-math.jpg' 
      className=' w-full h-full object-cover bg-no-repeat bg-cover mix-blend-overlay brightness-200 opacity-30'/> 
