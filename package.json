@@ -7,16 +7,19 @@
     "test": "jest"
   },
   "dependencies": {
-    "firebase": "^9.9.3",
+    "cors": "^2.8.5",
+    "firebase": "^9.9.4",
+    "google-search-results-nodejs": "^2.1.0",
     "next": "latest",
     "next-auth": "^4.10.3",
-    "react": "^18.1.0",
-    "react-dom": "18.1.0",
+    "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
-    "react-hook-form": "^7.34.2",
+    "react-dom": "18.1.0",
+    "react-hook-form": "^7.35.0",
     "react-icons": "^4.4.0",
     "react-next": "^0.0.1",
-    "react-router-dom": "^6.3.0"
+    "react-router": "^6.4.0",
+    "react-router-dom": "^6.4.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
