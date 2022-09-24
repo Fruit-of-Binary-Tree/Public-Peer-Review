@@ -42,7 +42,14 @@ function Header() {
       });
   };
 
+  const handleChange = (event: any) => {
+    searchKeyWords(event.target.value);
+  }
 
+  const handleClick = (event: any) => {
+    event.preventDefault();
+    search(keyWords);
+  }
   //Search Google Scholar Function
   const search = (searchValue: any) => {
     searchKeyWords(searchValue);
@@ -85,8 +92,8 @@ function Header() {
         <form className='flex items-center space-x-2 border border-cyan-600 rounded-lg
             bg-gray-100 py-1 px-3'>
           <FaSearch className='text-cyan-600 h-6 w-10' />
-          <input className='bg-transparent outline-none text-cyan-600' type='text' placeholder='Search Google Scholar' onChange={(e) => search(e.target.value)} />
-          <button type='submit' hidden />
+          <input className='bg-transparent outline-none text-cyan-600' type='text' placeholder='Search Google Scholar' onChange={handleChange} value={keyWords} />
+          <button type='submit' id='searchQ' onClick={handleClick} hidden />
         </form>
 
       </div>
