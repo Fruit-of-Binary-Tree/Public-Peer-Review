@@ -4,6 +4,7 @@ import {auth} from '../firebase-config.js'
 import Header from '../components/Header';
 import { useRouter } from 'next/router';
 import List from '../components/List'
+import Feed from '../components/Feed.jsx';
 
 function Home() {
 
@@ -53,12 +54,12 @@ function Home() {
 
       
       <div className='flex bg-transparent justify-center  items-center py-3 px-2 '>
-        <a href='./Post' 
+        <a href='./CreatePost' 
               className='border-2 text-cyan-600 border-cyan-600 rounded-md mt-2 px-12 py-2 inline-block font-semibold
               hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Create a Post</a>  
       </div>
 
-      <List />
+    <Feed/>
       {/*background image with styling*/}
      <img src='https://wallpaperbat.com/img/41158-favorite-math-wallpaper-math.jpg' 
      className=' w-full h-full object-cover bg-no-repeat bg-cover mix-blend-overlay brightness-200 opacity-30'/> 

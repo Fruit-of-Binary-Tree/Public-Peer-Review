@@ -26,6 +26,6 @@
     "__tests__/PostBox.test.js"
   ],
   "exclude": [
-    "node_modules"
-  ]
+    "components/Feed.jsx", "node_modules",
+  ],
 }
