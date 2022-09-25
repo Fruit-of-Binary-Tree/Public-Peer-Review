@@ -2,7 +2,7 @@
 import React, { useState ,useCallback} from 'react'
 import {FaGoogle, FaRegEnvelope} from 'react-icons/fa'
 import {MdLockOutline} from 'react-icons/md'
-import { auth, provider } from "../firebase-config.js"
+//import { auth, provider } from "../firebase-config.js"
 /*=======
 import React, { useState, useCallback } from 'react'
 import { FaGoogle, FaRegEnvelope } from 'react-icons/fa'
@@ -11,6 +11,7 @@ import { auth, provider } from "../firebase-config"
 >>>>>>> 97652314e43e677fe1d8c355fa54016f5a3e0add*/
 
 //imports for Google authentication
+/*
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -20,6 +21,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup
 } from "firebase/auth";
+*/
 
 import { useRouter } from 'next/router'
 
@@ -32,9 +34,12 @@ function Login() {
   const [user, setUser] = useState({});
   const router = useRouter()
 
+  
   const login = async () => {
-
+    router.push('/Home');
+    /*
     const auth = getAuth();
+    
     signInWithEmailAndPassword(auth, loginEmail, loginPassword) //Manual sign in with users details from sign up page
       .then((userCredential) => {
         // Signed in 
@@ -49,18 +54,25 @@ function Login() {
         const errorCode = error.code;
         const errorMessage = error.message; //If unsuccessful error message will be displayed
       });
-
+      */
   };
+  
+  
 
   //On Google icon click the userr will be directed to gmail where they can enter their email and password to sign in with Google
+  
   const signInWithGoogle = () => {
+    router.push('/Home');
+    /*
     signInWithPopup(auth, provider).then((result) => {
       console.log(result);
       router.push('/Home'); //If successful login to home page
     }).catch((error) => {
       console.log(error);
     });
+    */
   };
+  
 
   {/*UI components*/ }
   return (
