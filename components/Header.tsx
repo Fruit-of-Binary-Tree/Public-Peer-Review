@@ -1,10 +1,10 @@
-import { signOut } from 'firebase/auth';
+//import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 //<<<<<<< HEAD
 import {FaHome, FaSearch} from 'react-icons/fa'
 import {FiSettings} from 'react-icons/fi'
-import { auth } from '../firebase-config.js';
+//import { auth } from '../firebase-config.js';
 //=======
 //import { FaHome, FaSearch } from 'react-icons/fa'
 //import { FiSettings } from 'react-icons/fi'
@@ -24,8 +24,8 @@ function Header() {
 
   //logout function with Google Auth
   const logout = async () => {
-
-
+    router.push('/Login');
+    /*
     await signOut(auth)
       .then((userCredential) => {
         console.log("success");
@@ -35,6 +35,7 @@ function Header() {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
+      */
   };
 
 

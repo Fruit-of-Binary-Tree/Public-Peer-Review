@@ -1,25 +1,28 @@
 import React, { useState } from 'react'
+/*
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import {auth} from '../firebase-config.js' 
+*/
+//import {auth} from '../firebase-config.js' 
 import {FaRegEnvelope, FaUser} from 'react-icons/fa'
 import {MdLockOutline} from 'react-icons/md'
 
 // signup function, get users email and password
 //manually creating a users profile to be stored in firebase
-export default function signup() {
+function signup() {
 
   const [registerEmail, setRegisterEmail] = useState ("");
   const [registerPassword, setRegisterPassword] = useState ("");
 
   const register = async () => {
-    
+    /*
     const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
     console.log(user);
+    */
     
   };
 
@@ -90,3 +93,4 @@ export default function signup() {
     </div>
   )
 }
+export default signup
