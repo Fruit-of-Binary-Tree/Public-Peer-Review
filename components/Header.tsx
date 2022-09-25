@@ -48,10 +48,10 @@ function Header() {
 
   const handleClick = (event: any) => {
     event.preventDefault();
-    search(keyWords);
+    searchWords(keyWords);
   }
   //Search Google Scholar Function
-  const search = (searchValue: any) => {
+  const searchWords = (searchValue: any) => {
     searchKeyWords(searchValue);
 
     const SerpApi = require('google-search-results-nodejs');
@@ -59,10 +59,10 @@ function Header() {
 
     const params = {
       engine: "google_scholar",
-
       // this should be the input from search box
       q: searchValue
     };
+
 
     const callback = function (data: any) {
       console.log(data["organic_results"]);
