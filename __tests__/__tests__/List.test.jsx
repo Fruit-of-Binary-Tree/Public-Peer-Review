@@ -6,9 +6,8 @@ import { unmountComponentAtNode } from "react-dom";
 
 describe('ListView', () => {
     test("List View Exists", () => {
-        // render the login page
+        // render List View
         render(<List />);
-        // expect there to be the following text: "Sign in to Account"
         expect(screen.getByText(/List:/i)).toBeVisible();
     })
 
