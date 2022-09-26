@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  codecov: codecov/codecov@3.0.0
+  coveralls: coveralls/coveralls@1.0.6
 # Define the jobs we want to run for this project
 jobs:
   build:
@@ -25,8 +25,9 @@ jobs:
           name: test
           command: npm run test 
       - run:
-          name: Upload coverage report to code cov
-          command: bash <(curl -s https://codecov.io/bash) -F $CIRCLE_JOB
+          name: Test app
+          command: npm run test -- --coverage
+      - coveralls/upload
 
   code-job:
       docker:
