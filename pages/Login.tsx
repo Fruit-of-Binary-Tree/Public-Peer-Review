@@ -1,7 +1,7 @@
 //<<<<<<< HEAD
-import React, { useState ,useCallback} from 'react'
-import {FaGoogle, FaRegEnvelope} from 'react-icons/fa'
-import {MdLockOutline} from 'react-icons/md'
+import React, { useState, useCallback } from 'react'
+import { FaGoogle, FaRegEnvelope } from 'react-icons/fa'
+import { MdLockOutline } from 'react-icons/md'
 //import { auth, provider } from "../firebase-config.js"
 /*=======
 import React, { useState, useCallback } from 'react'
@@ -34,7 +34,7 @@ function Login() {
   const [user, setUser] = useState({});
   const router = useRouter()
 
-  
+
   const login = async () => {
     router.push('/Home');
     /*
@@ -56,11 +56,11 @@ function Login() {
       });
       */
   };
-  
-  
+
+
 
   //On Google icon click the userr will be directed to gmail where they can enter their email and password to sign in with Google
-  
+
   const signInWithGoogle = () => {
     router.push('/Home');
     /*
@@ -72,7 +72,7 @@ function Login() {
     });
     */
   };
-  
+
 
   {/*UI components*/ }
   return (
@@ -88,7 +88,7 @@ function Login() {
               <span className='text-black text-3xl'>Reviews</span>
             </div>
             <div className='py-7'>
-              <h2 className='text-3 font-bold mb-2 text-cyan-600'>Sign in to Account</h2>
+              <h2 className='text-3 font-bold mb-2 text-cyan-600' >Sign in to Account</h2>
               <div className="border-2 w-10 inline-block border-cyan-600 mb-4"></div>
               <div className='flex justify-center p-3 mb-1'>
                 {/*Button to initiate Google Auth*/}

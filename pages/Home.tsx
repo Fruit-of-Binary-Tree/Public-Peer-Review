@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-//import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
-//import {auth} from '../firebase-config.js' 
+/*
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { auth } from '../firebase-config.js'
+*/
 import Header from '../components/Header';
 import { useRouter } from 'next/router';
 import List from '../components/List'
@@ -9,13 +11,13 @@ import Feed from '../components/Feed.jsx';
 function Home() {
 
   //initialise variables
-  const [loginEmail, setLoginEmail] = useState ("");
-  const [loginPassword, setLoginPassword] = useState ("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
 
   const [user, setUser] = useState({});
- 
+
   const router = useRouter()
-  
+
   //Users login session
   const login = async () => {
     router.push('/Home');
@@ -34,12 +36,13 @@ function Home() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-      }); 
-    */
-  };
-  
+      }); */
 
-  
+
+  };
+
+
+
   return (
     <div className="relative bg-zinc-300">
 
@@ -53,17 +56,17 @@ function Home() {
         </p>
       </div>
 
-      
+
       <div className='flex bg-transparent justify-center  items-center py-3 px-2 '>
-        <a href='./CreatePost' 
-              className='border-2 text-cyan-600 border-cyan-600 rounded-md mt-2 px-12 py-2 inline-block font-semibold
-              hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Create a Post</a>  
+        <a href='./CreatePost'
+          className='border-2 text-cyan-600 border-cyan-600 rounded-md mt-2 px-12 py-2 inline-block font-semibold
+              hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Create a Post</a>
       </div>
 
-    <Feed/>
+      <Feed />
       {/*background image with styling*/}
-     <img src='https://wallpaperbat.com/img/41158-favorite-math-wallpaper-math.jpg' 
-     className=' w-full h-full object-cover bg-no-repeat bg-cover mix-blend-overlay brightness-200 opacity-30'/> 
+      <img src='https://wallpaperbat.com/img/41158-favorite-math-wallpaper-math.jpg'
+        className=' w-full h-full object-cover bg-no-repeat bg-cover mix-blend-overlay brightness-200 opacity-30' />
 
     </div>
   )
