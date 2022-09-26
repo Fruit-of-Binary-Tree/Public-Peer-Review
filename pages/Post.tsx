@@ -18,7 +18,7 @@ function Post() {
   const handleSubmit = async (e: { preventDefault: () => void })  => {
     e.preventDefault();
     if(title == "" || author == "" || url == "" || description == "" || university == "" || citations == ""){
-      setMessage({ error: true, msg: " all fiels are mandatory!"});
+      setMessage({ error: true, msg: " all fields are mandatory!"});
       return;
     }
     const newPaper = {
@@ -33,7 +33,7 @@ function Post() {
 
     try{
       await PaperDataService.addPaper(newPaper);
-      setMessage({error: false, msg: " new book added!"});
+      setMessage({error: false, msg: " new paper added!"});
     }
     catch (err){
       //setMessage({error: true });
@@ -51,7 +51,7 @@ function Post() {
     <form className='sticky flex-center top-16 z-50 border-gray-300 bg-zinc-200 p-2' onSubmit={handleSubmit}>
     {message?.msg && (
       <Alert>
-        {message?.error ? "danger" : "successs"}
+        {message?.error ? "Danger" : "Success"}
           {message?.msg}
       </Alert>
     )}
