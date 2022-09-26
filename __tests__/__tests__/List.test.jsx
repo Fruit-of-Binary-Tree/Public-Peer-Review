@@ -11,4 +11,9 @@ describe('ListView', () => {
         expect(screen.getByText(/List:/i)).toBeVisible();
     })
 
+    test("Refresh List", () => {
+        render(<List />);
+        expect(screen.getByText(/Refresh List?/i)).toBeVisible();
+    })
+
 })
