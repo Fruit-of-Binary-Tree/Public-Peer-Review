@@ -4,11 +4,16 @@ import { render, screen } from "@testing-library/react";
 import Header from "../../components/Header";
 import { unmountComponentAtNode } from "react-dom";
 
-describe('basic input component', () => {
-    it("Checks if component header is present", () => {
-        const div = document.createElement("div");
+describe('Header', () => {
+
+    test("Search Box", () => {
         render(<Header />);
-        unmountComponentAtNode(div);
+        expect(screen.getByPlaceholderText(/Search Peer Review/i)).toBeVisible();
+    })
+
+    test("Logout Button", () => {
+        render(<Header />);
+        expect(screen.getByRole("button", { name: /Signout/i })).toBeVisible();
     })
 
 

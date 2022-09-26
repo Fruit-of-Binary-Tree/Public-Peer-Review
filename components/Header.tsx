@@ -2,8 +2,8 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 //<<<<<<< HEAD
-import {FaHome, FaSearch} from 'react-icons/fa'
-import {FiSettings} from 'react-icons/fi'
+import { FaHome, FaSearch } from 'react-icons/fa'
+import { FiSettings } from 'react-icons/fi'
 //import { auth } from '../firebase-config.js';
 //=======
 //import { FaHome, FaSearch } from 'react-icons/fa'
@@ -60,7 +60,7 @@ function Header() {
             bg-gray-100 py-1 px-3'>
           <FaSearch className='text-cyan-600 h-6 w-10' />
           <input className='bg-transparent outline-none text-cyan-600' type='text' placeholder='Search Peer Review' />
-          <button type='submit' hidden />
+          <button name='searchbtn' type='submit' hidden />
         </form>
 
       </div>
@@ -72,7 +72,7 @@ function Header() {
 
       {/* Logout button and styling, onClick will call logout function */}
       <div className='flex items-center px-2'>
-        <button onClick={logout} className='text-cyan-600 flex items-end text-lg' >Signout</button>
+        <button name="Signout" onClick={logout} className='text-cyan-600 flex items-end text-lg' >Signout</button>
       </div>
 
 
