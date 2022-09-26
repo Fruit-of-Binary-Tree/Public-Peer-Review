@@ -4,12 +4,12 @@ import { render, screen } from "@testing-library/react";
 import List from "../../components/List";
 import { unmountComponentAtNode } from "react-dom";
 
-describe('basic input component', () => {
-    it("Checks if the list of objects is loaded", () => {
-        const div = document.createElement("div");
+describe('ListView', () => {
+    test("List View Exists", () => {
+        // render the login page
         render(<List />);
-        unmountComponentAtNode(div);
+        // expect there to be the following text: "Sign in to Account"
+        expect(screen.getByText(/List:/i)).toBeVisible();
     })
-
 
 })
