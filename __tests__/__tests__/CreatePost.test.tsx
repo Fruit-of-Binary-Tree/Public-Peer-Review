@@ -5,12 +5,10 @@ import Post from "../../pages/CreatePost";
 import { unmountComponentAtNode } from "react-dom";
 
 describe('basic input component', () => {
-    it("render without crashing", () => {
+    it("Checking if post is created", () => {
         const div = document.createElement("div");
         render(<Post />);
         unmountComponentAtNode(div);
     })
-
-    
 
 })

@@ -5,7 +5,7 @@ import List from "../../components/Feed";
 import { unmountComponentAtNode } from "react-dom";
 
 describe('basic input component', () => {
-    it("render without crashing", () => {
+    it("Checks if feed is shown to user", () => {
         const div = document.createElement("div");
         render(<List />);
         unmountComponentAtNode(div);

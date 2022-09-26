@@ -5,7 +5,7 @@ import Home from "../../pages/index";
 import { unmountComponentAtNode } from "react-dom";
 
 describe('basic input component', () => {
-    it("render without crashing", () => {
+    it("Checks for navigation between pages", () => {
         const div = document.createElement("div");
         render(<Home />);
         unmountComponentAtNode(div);

@@ -5,7 +5,7 @@ import Home from "../../pages/Home";
 import { unmountComponentAtNode } from "react-dom";
 
 describe('basic input component', () => {
-    it("render without crashing", () => {
+    it("checks if the sign in page is loaded", () => {
         const div = document.createElement("div");
         render(<Home />);
         unmountComponentAtNode(div);

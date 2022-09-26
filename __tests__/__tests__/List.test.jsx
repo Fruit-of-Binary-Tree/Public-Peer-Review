@@ -5,7 +5,7 @@ import List from "../../components/List";
 import { unmountComponentAtNode } from "react-dom";
 
 describe('basic input component', () => {
-    it("render without crashing", () => {
+    it("Checks if the list of objects is loaded", () => {
         const div = document.createElement("div");
         render(<List />);
         unmountComponentAtNode(div);

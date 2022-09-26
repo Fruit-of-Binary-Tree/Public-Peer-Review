@@ -5,7 +5,7 @@ import PostBox from "../../components/PostBox";
 import { unmountComponentAtNode } from "react-dom";
 
 describe('basic input component', () => {
-    it("render without crashing", () => {
+    it("Checks if PostBox page is rendered", () => {
         const div = document.createElement("div");
         render(<PostBox />);
         unmountComponentAtNode(div);
