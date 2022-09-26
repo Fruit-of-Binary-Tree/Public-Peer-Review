@@ -11,6 +11,4 @@ describe('basic input component', () => {
         unmountComponentAtNode(div);
     })
 
-    
-
 })
