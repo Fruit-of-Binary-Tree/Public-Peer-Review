@@ -4,11 +4,16 @@ import { render, screen } from "@testing-library/react";
 import Home from "../../pages/Home";
 import { unmountComponentAtNode } from "react-dom";
 
-describe('basic input component', () => {
-    it("checks if the sign in page is loaded", () => {
-        const div = document.createElement("div");
-        render(<Home />);
-        unmountComponentAtNode(div);
+describe('HomePage', () => {
+
+    test("Create a post", () => {
+        render(<Home />)
+        expect(screen.getByText(/Create a Post/i)).toBeVisible();
+    })
+
+    test("Welcome message", () => {
+        render(<Home />)
+        expect(screen.getByText(/Welcome to Genius Reviews, post your academic work and let your peers give you feedback/i)).toBeVisible();
     })
 
 
