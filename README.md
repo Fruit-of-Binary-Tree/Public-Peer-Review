@@ -3,6 +3,8 @@
 
 [![codecov](https://codecov.io/gh/Purple-Iverson/QBMS-Flutter/branch/master/graph/badge.svg?token=APYUDFXE55)](https://codecov.io/gh/Purple-Iverson/QBMS-Flutter)
 
+[![codecov](https://codecov.io/gh/Purple-Iverson/QBMS-Flutter/branch/master/graph/badge.svg?token=APYUDFXE55)](https://codecov.io/gh/Purple-Iverson/QBMS-Flutter)
+
 
 
 
