@@ -11,7 +11,7 @@ import { auth, provider } from "../firebase-config"
 >>>>>>> 97652314e43e677fe1d8c355fa54016f5a3e0add*/
 
 //imports for Google authentication
-/*
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -21,7 +21,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup
 } from "firebase/auth";
-*/
+
 
 import { useRouter } from 'next/router'
 
@@ -37,7 +37,7 @@ function Login() {
 
   const login = async () => {
     router.push('/Home');
-    /*
+    
     const auth = getAuth();
     
     signInWithEmailAndPassword(auth, loginEmail, loginPassword) //Manual sign in with users details from sign up page
@@ -54,7 +54,7 @@ function Login() {
         const errorCode = error.code;
         const errorMessage = error.message; //If unsuccessful error message will be displayed
       });
-      */
+      
   };
 
 
@@ -63,14 +63,14 @@ function Login() {
 
   const signInWithGoogle = () => {
     router.push('/Home');
-    /*
+    
     signInWithPopup(auth, provider).then((result) => {
       console.log(result);
       router.push('/Home'); //If successful login to home page
     }).catch((error) => {
       console.log(error);
     });
-    */
+    
   };
 
 
