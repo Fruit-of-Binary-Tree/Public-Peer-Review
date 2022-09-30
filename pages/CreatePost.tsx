@@ -36,7 +36,7 @@ function Post() {
       setMessage({error: false, msg: " new paper added!"});
     }
     catch (err){
-      setMessage({error: true });
+      //setMessage({error: true });
     }
 
     setTitle("");
