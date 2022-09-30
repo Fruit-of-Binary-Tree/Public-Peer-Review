@@ -2,7 +2,7 @@
 import React, { useState, useCallback } from 'react'
 import { FaGoogle, FaRegEnvelope } from 'react-icons/fa'
 import { MdLockOutline } from 'react-icons/md'
-//import { auth, provider } from "../firebase-config.js"
+import { auth, provider } from "../firebase-config.js"
 /*=======
 import React, { useState, useCallback } from 'react'
 import { FaGoogle, FaRegEnvelope } from 'react-icons/fa'
@@ -36,7 +36,8 @@ function Login() {
 
 
   const login = async () => {
-    router.push('/Home');
+  
+    //router.push('/Home');           // use if you want to bypass login
     
     const auth = getAuth();
     
@@ -62,7 +63,7 @@ function Login() {
   //On Google icon click the userr will be directed to gmail where they can enter their email and password to sign in with Google
 
   const signInWithGoogle = () => {
-    router.push('/Home');
+    //router.push('/Home');               // use if you want to bypass login
     
     signInWithPopup(auth, provider).then((result) => {
       console.log(result);
