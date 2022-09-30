@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-/*
+
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from '../firebase-config.js'
-*/
+
 import Header from '../components/Header';
 import { useRouter } from 'next/router';
 import List from '../components/List'
@@ -21,7 +21,7 @@ function Home() {
   //Users login session
   const login = async () => {
     router.push('/Home');
-    /*
+    
     const auth = getAuth();
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       .then((userCredential) => {
@@ -36,7 +36,7 @@ function Home() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-      }); */
+      }); 
 
 
   };
