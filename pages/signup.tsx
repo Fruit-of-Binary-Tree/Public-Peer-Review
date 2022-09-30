@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-/*
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -7,7 +7,7 @@ import {
   signOut,
 } from "firebase/auth";
 import {auth} from '../firebase-config.js' 
-*/
+
 import { FaRegEnvelope, FaUser } from 'react-icons/fa'
 import { MdLockOutline } from 'react-icons/md'
 
@@ -20,9 +20,9 @@ function signup() {
 
   const register = async () => {
 
-    /*const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+    const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
     console.log(user);
-    */
+    
 
   };
 
