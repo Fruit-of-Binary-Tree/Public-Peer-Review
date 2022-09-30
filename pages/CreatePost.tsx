@@ -3,7 +3,7 @@ import {FaUniversity, FaUser, FaQuoteLeft, FaLink } from 'react-icons/fa'
 import {FiAlignJustify} from 'react-icons/fi'
 import { SiAcademia } from "react-icons/si";
 import { Alert } from 'react-bootstrap'
-//import PaperDataService from "../services/paper.services"
+import PaperDataService from "../services/paper.services"
 
 function Post() {
 
@@ -32,11 +32,11 @@ function Post() {
     console.log(newPaper);
 
     try{
-      //await PaperDataService.addPaper(newPaper);
+      await PaperDataService.addPaper(newPaper);
       setMessage({error: false, msg: " new paper added!"});
     }
     catch (err){
-      //setMessage({error: true });
+      setMessage({error: true });
     }
 
     setTitle("");
