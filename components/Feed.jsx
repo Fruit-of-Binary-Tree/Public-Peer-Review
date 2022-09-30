@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-//import {collection, getDocs} from 'firebase/firestore'
-//import {db} from '../firebase-config'
+import {collection, getDocs} from 'firebase/firestore'
+import {db} from '../firebase-config'
 import Post from '../pages/Post';
 import {FiRefreshCw} from 'react-icons/fi'
 
@@ -19,7 +19,7 @@ useEffect(() => {
 }, [papers])
 
 function getPapers(){
-  /*
+  
     const movieCollectionRef = collection(db, 'papers');
     getDocs(movieCollectionRef)
         .then(response => {
@@ -32,7 +32,7 @@ function getPapers(){
             setPapers(movs)
         })
         .catch(error => console.log(error.message))
-  */      
+     
 
 
 }
