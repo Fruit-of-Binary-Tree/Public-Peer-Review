@@ -4,6 +4,8 @@ import {FiAlignJustify} from 'react-icons/fi'
 import { SiAcademia } from "react-icons/si";
 import { Alert } from 'react-bootstrap'
 import PaperDataService from "../services/paper.services"
+import {auth} from '../firebase-config'
+
 
 function Post() {
 
@@ -27,7 +29,8 @@ function Post() {
       url,
       description,
       university,
-      citations
+      citations,
+      creator: {name:auth.currentUser?.displayName,id:auth.currentUser?.uid},
     }
     console.log(newPaper);
 
@@ -85,7 +88,7 @@ function Post() {
 
                 <div className='bg-gray-100 w-96 h-32 p-2 flex items-start mb-3 rounded-md'>
                     <FaQuoteLeft className='text-gray-400 mr-2'/>
-                    <input type="text" name='citations' placeholder='Citations' value = {citations} onChange = {(e) => setCitation(e.target.value)} className='bg-gray-100 outline-none text-sm '></input>
+                    <input type="text" name='tags' placeholder='Tags' value = {citations} onChange = {(e) => setCitation(e.target.value)} className='bg-gray-100 outline-none text-sm '></input>
                 </div>
 
                 <div className='bg-gray-100 w-96 h-32 p-2 flex items-start mb-3 rounded-md'>
@@ -110,11 +113,8 @@ function Post() {
                 
                 <a href='./Home' 
                 className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold text-white
-                hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Home</a>  
+                hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Cancel</a>  
                 </div>
-
-                
-
 
             </div>
             </div>

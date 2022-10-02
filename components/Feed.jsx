@@ -3,12 +3,14 @@ import {collection, getDocs} from 'firebase/firestore'
 import {db} from '../firebase-config'
 import Post from '../pages/Post';
 import {FiRefreshCw} from 'react-icons/fi'
+import {useSession} from "next-auth/react";
 
 
 export default function List() {
 
 
 const [papers, setPapers] = useState([])
+
 
 useEffect(() => {
     getPapers()
@@ -46,9 +48,11 @@ function getPapers(){
         {papers.map(paper => (
           <Post
           id={paper.id}
+          // username={Post.data().username}
           title={paper.data.title}
           author={paper.data.author}
           url={paper.data.url}
+          creator={paper.data.creator.name}
 
           />
            

@@ -1,16 +1,11 @@
 import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
-//<<<<<<< HEAD
+
 import {FaHome, FaSearch} from 'react-icons/fa'
 import {FiSettings} from 'react-icons/fi'
 import { auth } from '../firebase-config.js';
-//=======
-//import { FaHome, FaSearch } from 'react-icons/fa'
-//import { FiSettings } from 'react-icons/fi'
-//import { auth } from '../firebase-config';
-//>>>>>>> 97652314e43e677fe1d8c355fa54016f5a3e0add
-
+import List from '../components/List.jsx';
 
 function Header() {
 
@@ -51,7 +46,7 @@ function Header() {
       {/* Home icon and styling used for refreshing page */}
       <div className='text-cyan-600 flex items-center px-7 mr-8'>
         <FaHome className='h-6 w-6' />
-        <p className='ml-1 text-lg'>Home</p>
+        <p className='ml-1 text-lg font-semibold'>Home</p>
       </div>
 
       {/* Search box*/}
@@ -62,17 +57,16 @@ function Header() {
           <input className='bg-transparent outline-none text-cyan-600' type='text' placeholder='Search Peer Review' />
           <button type='submit' hidden />
         </form>
-
       </div>
 
-      {/* Setting icon and styling used to edit user's details */}
-      <div className='flex items-center px-3 ml-8'>
-        <FiSettings className='h-6 w-6 text-cyan-600  ' />
+      <div className='flex items-center '>
+        <a href='./SearchPeerReview'
+          className=' mr-5 ml-5 inline-block font-semibold text-cyan-600 text-lg  hover:text-black'>Search Peer Review</a>
       </div>
 
       {/* Logout button and styling, onClick will call logout function */}
       <div className='flex items-center px-2'>
-        <button onClick={logout} className='text-cyan-600 flex items-end text-lg' >Signout</button>
+        <button onClick={logout} className='text-cyan-600 flex items-end text-lg font-semibold  hover:text-black ' >Signout</button>
       </div>
 
 
