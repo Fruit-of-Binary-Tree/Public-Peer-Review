@@ -6,6 +6,7 @@ import {useState} from 'react';
 import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import Moment from 'react-moment';
+import Rating from '../components/Rating'
 
 //{id:any,username:any,caption:any,key:any,title:any,author:any,url:any,viewPdf:any,doc:any}
 function Post({id,username,caption,url,title,author, viewPdf,creator}) 
@@ -71,7 +72,7 @@ function Post({id,username,caption,url,title,author, viewPdf,creator})
       {/*Buttons */}
       <div className='px-4 pt-4 pb-4'>
         <div className='flex space-x-4 '>
-        <HiOutlineHeart className='btn'/>
+          <Rating/>
         <FaComments className='btn' />
         </div>
       </div>
@@ -82,7 +83,7 @@ function Post({id,username,caption,url,title,author, viewPdf,creator})
           {comments.map((comment) =>(
             <div key={comment.id} className="flex items-center space-x-2 mb-3">
             <span></span>
-            <p className='flex-1'><span className='font-bold'>{comment.data().creator}</span>{comment.data().comment}</p>
+            <p className='flex-1'><span className='font-bold'>Que Sera</span><span>   </span>{comment.data().comment}</p>
             <Moment fromNow className='flex pr-5 text-xs'>
               {comment.data().timestamp?.toDate()}
             </Moment>
