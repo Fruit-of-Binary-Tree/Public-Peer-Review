@@ -51,6 +51,7 @@ function getPapers(){
           // username={Post.data().username}
           title={paper.data.title}
           author={paper.data.author}
+          description={paper.data.description}
           url={paper.data.url}
           creator={paper.data.creator.name}
 
