@@ -10,7 +10,7 @@ import Moment from 'react-moment';
 import Rating from '../components/Rating'
 
 //{id:any,username:any,caption:any,key:any,title:any,author:any,url:any,viewPdf:any,doc:any}
-function Post({id,username,caption,url,title,author, viewPdf,creator}) 
+function Post({id,username,caption,url,title,author, viewPdf,creator, description}) 
 {
   // const {data:session}=useSession();
   const [comment, setComment] = useState("");
@@ -54,10 +54,16 @@ function Post({id,username,caption,url,title,author, viewPdf,creator})
         {author}
       </div>
 
-      {/*Description */}
+      {/*title */}
       <div className='p-5 truncate'>
       <span className='p-5 truncate font-semibold text-cyan-600'>Title:</span>
         {title}
+      </div>
+
+      {/*Description */}
+      <div className='p-5 truncate'>
+      <span className='p-5 truncate font-semibold text-cyan-600'>Description:</span>
+        {description}
       </div>
 
       {/*URL */}
