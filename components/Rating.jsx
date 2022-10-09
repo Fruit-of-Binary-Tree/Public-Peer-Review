@@ -9,6 +9,7 @@ const StarRating = () => {
 
   return (
     <div>
+      <p>Please rate the paper with regards to usefullness:</p>
       {[...Array(5)].map((star, i) => {
         const ratingValue = i + 1;
 
@@ -29,7 +30,7 @@ const StarRating = () => {
           </label>
         )
       })}
-      <p>Your rating is {rating}</p>
+      <p>Rating is {rating}</p>
     </div>
   )
 }
