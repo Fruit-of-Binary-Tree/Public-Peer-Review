@@ -80,9 +80,14 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
       {/*Buttons */}
       <div className='px-4 pt-4 pb-4'>
         <div className='flex space-x-4 '>
-          <Rating/>
-        <FaComments className='btn' />
+        <Rating />
+        
         </div>
+        <div className='flex space-x-4 '>
+        <FaComments className='btn' />
+        
+        </div>
+        
       </div>
 
       {/*Comments */}
