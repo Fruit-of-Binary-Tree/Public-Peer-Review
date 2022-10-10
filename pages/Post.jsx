@@ -73,7 +73,7 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
       </div>
 
       {/*Document */}
-      <div className='pdfContainer'> 
+      <div className='pdfContainer ml-7'> 
       
       </div>
 
@@ -83,20 +83,16 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
         <Rating />
         
         </div>
-        <div className='flex space-x-4 '>
-        <FaComments className='btn' />
-        
-        </div>
         
       </div>
 
       {/*Comments */}
       {comments.length >0 && (
-        <div className='ml-10 h-20 overflow-y-scroll scrollbar-thumb-black scrollbar-thin'>
+        <div className=' ml-2 h-20 overflow-y-scroll scrollbar-thumb-black scrollbar-thin'>
           {comments.map((comment) =>(
             <div key={comment.id} className="flex items-center space-x-2 mb-3">
             <span></span>
-            <p className='flex-1'><span className='font-bold'>{comment.data().creator.name}</span><span> </span>{comment.data().comment}</p>
+            <p className='flex-1'><span className='font-bold text-cyan-600'>{comment.data().creator.name}</span><span className='px-1'> </span>{comment.data().comment}</p>
             <Moment fromNow className='flex pr-5 text-xs'>
               {comment.data().timestamp?.toDate()}
             </Moment>
