@@ -2,8 +2,8 @@ import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 
-import {FaHome, FaSearch} from 'react-icons/fa'
-import {FiSettings} from 'react-icons/fi'
+import { FaHome, FaSearch } from 'react-icons/fa'
+import { FiSettings } from 'react-icons/fi'
 import { auth } from '../firebase-config.js';
 import List from '../components/List.jsx';
 
@@ -15,12 +15,24 @@ function Header() {
 
   const [user, setUser] = useState({});
 
+  const [keyWords, searchKeyWords] = useState('');
+
   const router = useRouter()
+
+  /*const getStaticProps = async () => {
+    const res = await fetch('https://serpapi.com/searches/6da710a47795cbfc/63446fe8c7ad41a76679b383.json');
+    const data = await res.json();
+
+    return {
+      props: { items: data }
+    }
+  }*/
+
 
   //logout function with Google Auth
   const logout = async () => {
     router.push('/Login');
-    
+
     await signOut(auth)
       .then((userCredential) => {
         console.log("success");
@@ -30,9 +42,42 @@ function Header() {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
-      
+
   };
 
+
+  const handleChange = (event: any) => {
+    searchKeyWords(event.target.value);
+  }
+
+  const handleClick = (event: any) => {
+    event.preventDefault();
+    searchWords(keyWords);
+  }
+
+
+
+  //Search Google Scholar Function
+  const searchWords = async (searchValue: any) => {
+    searchKeyWords(searchValue);
+
+    const SerpApi = require('google-search-results-nodejs');
+    const search = new SerpApi.GoogleSearch("7d67eaa0033c6aae1c4c233711f59dee820dabb5f34966d25f22ed319abace64");
+
+    const params = {
+      engine: "google_scholar",
+      // query should be the input from search box
+      q: searchValue
+    };
+
+    const callback = function (data: any) {
+      console.log(data["organic_results"]);
+    };
+
+    // Show result as JSON
+    search.json(params, callback);
+
+  };
 
 
   return (
@@ -54,8 +99,8 @@ function Header() {
         <form className='flex items-center space-x-2 border border-cyan-600 rounded-lg
             bg-gray-100 py-1 px-3'>
           <FaSearch className='text-cyan-600 h-6 w-10' />
-          <input className='bg-transparent outline-none text-cyan-600' type='text' placeholder='Search Peer Review' />
-          <button type='submit' hidden />
+          <input className='bg-transparent outline-none text-cyan-600' type='text' placeholder='Search Peer Review' onChange={handleChange} value={keyWords} />
+          <button type='submit' hidden onClick={handleClick} />
         </form>
       </div>
 

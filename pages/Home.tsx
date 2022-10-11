@@ -21,7 +21,7 @@ function Home() {
   //Users login session
   const login = async () => {
     router.push('/Home');
-    
+
     const auth = getAuth();
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       .then((userCredential) => {
@@ -29,17 +29,18 @@ function Home() {
         const user = userCredential.user;
         console.log("success");
         router.push('/Home');
-        
+
 
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-      }); 
+      });
 
 
   };
+
 
 
 
@@ -56,17 +57,17 @@ function Home() {
         </p>
       </div>
 
-    <div className='flex-row'>
+      <div className='flex-row'>
 
-    <div className='flex bg-transparent justify-center items-center py-3 px-2 '>
-        <a href='./CreatePost'
-          className='border-2 text-cyan-600 border-cyan-600 rounded-md mt-2 px-12 py-2 inline-block font-semibold
+        <div className='flex bg-transparent justify-center items-center py-3 px-2 '>
+          <a href='./CreatePost'
+            className='border-2 text-cyan-600 border-cyan-600 rounded-md mt-2 px-12 py-2 inline-block font-semibold
               hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Create a Post</a>
-    </div>
-    <Feed/>
+        </div>
+        <Feed />
 
-    </div>
-  
+      </div>
+
     </div>
   )
 }
