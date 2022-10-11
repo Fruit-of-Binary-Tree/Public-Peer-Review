@@ -9,28 +9,32 @@ const StarRating = () => {
 
   return (
     <div>
-      <p>Please rate the paper with regards to usefullness:</p>
+      <p className='font-semibold py-1'>Please rate the paper with regards to usefulness:</p>
+      <span className='flex py-1'>
+
       {[...Array(5)].map((star, i) => {
         const ratingValue = i + 1;
 
         return (
-          <label>
-            <input
+            <div className='flex px-2'>
+            <input 
               type = "radio"
               name="rating"
               value={ratingValue}
               onClick = {() => setRating(ratingValue)}
             />
-            <FaStar
+              <FaStar
               className="star"
               color = {ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
               onMouseEnter={() => setHover(ratingValue)}
-              onMouseLeave={() => setHover(null)}
-            />  
-          </label>
+              onMouseLeave={() => setHover(null)}/>    
+   
+          </div>
         )
       })}
-      <p>Rating is {rating}</p>
+      </span>
+
+      <p className='font-semibold py-1'>Rating is {rating}</p>
     </div>
   )
 }
