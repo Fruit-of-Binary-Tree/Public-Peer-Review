@@ -21,7 +21,7 @@ function GoogleScholar() {
     searchKeyWords(searchValue);
 
     const SerpApi = require('google-search-results-nodejs');
-    const search = new SerpApi.GoogleSearch("7d67eaa0033c6aae1c4c233711f59dee820dabb5f34966d25f22ed319abace64");
+    const search = new SerpApi.GoogleSearch("e3d9e4feb1a94f6069e31adeffdf03923a68be6ad7fdec4a892d9a287a11a78c");
 
     const params = {
       engine: "google_scholar",
