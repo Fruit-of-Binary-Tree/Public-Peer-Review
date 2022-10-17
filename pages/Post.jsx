@@ -3,18 +3,25 @@ import {HiOutlineHeart} from 'react-icons/hi'
 import {FaComments} from 'react-icons/fa'
 import {useSession} from 'next-auth/react';
 import {useState} from 'react';
-import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp, setDoc, doc, deleteDoc } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import {auth} from '../firebase-config';
 import Moment from 'react-moment';
 import Rating from '../components/Rating'
-
+import {HeartIcon} from "@heroicons/react/outline"
+import {HeartIcon as HeartIconFilled} from "@heroicons/react/solid"
 //{id:any,username:any,caption:any,key:any,title:any,author:any,url:any,viewPdf:any,doc:any}
 function Post({id,username,caption,url,title,author, viewPdf,creator, description}) 
 {
   // const {data:session}=useSession();
   const [comment, setComment] = useState("");
   const [comments,setComments] = useState([]);
+
+  const [likes,setLikes] = useState([]);
+  const [hasLiked, sethasLiked] = useState(false);
+
+  const [likes2,setLikes2] = useState([]);
+  const [hasLiked2, sethasLiked2] = useState(false);
 
   useEffect(
     () =>
@@ -25,7 +32,41 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
         ),
         (snapshot) => setComments(snapshot.docs)
         ),
+  [db,id]);
+
+  useEffect(
+    () =>
+    onSnapshot(
+        collection(db,"posts",id,"likes"),
+       
+        (snapshot) => setLikes(snapshot.docs)
+        ),
   [db]);
+
+  useEffect(
+    () => 
+      sethasLiked(
+        likes.findIndex((like) => like.id === auth.currentUser?.uid) !== -1
+      ),
+     [likes]
+  );
+
+  useEffect(
+    () =>
+    onSnapshot(
+        collection(db,"posts",id,"likes2"),
+       
+        (snapshot) => setLikes2(snapshot.docs)
+        ),
+  [db]);
+
+  useEffect(
+    () => 
+      sethasLiked2(
+        likes2.findIndex((like2) => like2.id === auth.currentUser?.uid) !== -1
+      ),
+     [likes2]
+  );
 
   const sendComment =async (e) => {
     e.preventDefault();
@@ -40,6 +81,30 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
       timestamp:serverTimestamp(),
     })
   }
+
+  const likePost = async () => {
+    if (hasLiked){
+      await deleteDoc(doc(db, "posts", id, "likes", auth.currentUser?.uid));
+    }
+    else{
+      await setDoc(doc(db, 'posts', id, 'likes', auth.currentUser?.uid), {
+        name:auth.currentUser?.displayName,
+      });
+    }
+  };
+
+  const likePost2 = async () => {
+    if (hasLiked2){
+      await deleteDoc(doc(db, "posts", id, "likes2", auth.currentUser?.uid));
+    }
+    else{
+      await setDoc(doc(db, 'posts', id, 'likes2', auth.currentUser?.uid), {
+        name:auth.currentUser?.displayName,
+      });
+    }
+  };
+
+ 
 
   return (
     
@@ -80,11 +145,33 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
       {/*Buttons */}
       <div className='px-4 pt-4 pb-4'>
         <div className='flex space-x-4 '>
-        <Rating />
-        
+          <p>If you liked the readibility please like the post</p>
+          {
+            hasLiked ? (
+              <HeartIconFilled onClick={likePost} className='btn text-red-500' />
+            ) : (
+              <HeartIcon onClick={likePost} className='btn'/>
+            )}
+        </div>
+
+        <div className='flex space-x-4 '>
+          <p>If you liked the usefulness please like the post</p>
+          {
+            hasLiked2 ? (
+              <HeartIconFilled onClick={likePost2} className='btn text-red-500' />
+            ) : (
+              <HeartIcon onClick={likePost2} className='btn'/>
+            )}
         </div>
         
       </div>
+
+      <p className='flex space-between items-center p-4'>
+        {likes.length > 0 && (
+          <p className="font-bold mb-1"> The average liking of the paper is : {(likes.length + likes2.length)/5} </p>
+        )}
+      </p>
+      
 
       {/*Comments */}
       {comments.length >0 && (
