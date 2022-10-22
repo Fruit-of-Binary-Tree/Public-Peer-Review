@@ -8,6 +8,9 @@ import { db } from '../firebase-config';
 import {auth} from '../firebase-config';
 import Moment from 'react-moment';
 import Rating from '../components/Rating'
+import { Worker } from '@react-pdf-viewer/core';
+import { Viewer } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
 //{id:any,username:any,caption:any,key:any,title:any,author:any,url:any,viewPdf:any,doc:any}
 function Post({id,username,caption,url,title,author, viewPdf,creator, description}) 
@@ -15,6 +18,14 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
   // const {data:session}=useSession();
   const [comment, setComment] = useState("");
   const [comments,setComments] = useState([]);
+  const [pdfFile,setPdfFile]=useState(null);
+
+  const handleFile =(e) =>{
+    let selectedFile = e.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(selectedFile);
+
+  }
 
   useEffect(
     () =>
@@ -73,7 +84,12 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
       </div>
 
       {/*Document */}
-      <div className='pdfContainer ml-7'> 
+      <div className='viewer'>
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.min.js">
+          <Viewer fileUrl={"/Users/queserasubramoney/Documents/Builds/public-peer-review/pdf/Que Sera Subramoney_2022.pdf"}>
+
+          </Viewer>
+        </Worker>
       
       </div>
 
