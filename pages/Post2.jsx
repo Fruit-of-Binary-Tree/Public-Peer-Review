@@ -8,29 +8,72 @@ import { db } from '../firebase-config';
 import {auth} from '../firebase-config';
 import Moment from 'react-moment';
 import Rating from '../components/Rating'
-<<<<<<< HEAD
-import { Worker } from '@react-pdf-viewer/core';
-import { Viewer } from '@react-pdf-viewer/core';
-import '@react-pdf-viewer/core/lib/styles/index.css';
-
-=======
 import {HeartIcon} from "@heroicons/react/outline"
 import {HeartIcon as HeartIconFilled} from "@heroicons/react/solid"
->>>>>>> af33713c8377dadb681c7b74252b3287721d7c6b
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { storage } from "../firebase-config";
+import { Viewer } from '@react-pdf-viewer/core'; // install this library
+// Plugins
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'; // install this library
+// Import the styles
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+// Worker
+import { Worker } from '@react-pdf-viewer/core'; // install this library
+
+
+
 //{id:any,username:any,caption:any,key:any,title:any,author:any,url:any,viewPdf:any,doc:any}
-function Post({id,username,caption,url,title,author, viewPdf,creator, description}) 
+function Post2({id,username,caption,url,title,author, creator, description}) 
 {
+
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
+  
+  // for onchange event
+  const [pdfFile, setPdfFile]=useState(null);
+  const [pdfFileError, setPdfFileError]=useState('');
+
+  // for submit event
+  const [viewPdf, setViewPdf]=useState(null);
+
+  // onchange event
+  const fileType=['application/pdf'];
+  const handlePdfFileChange=(e)=>{
+    let selectedFile=e.target.files[0];
+    if(selectedFile){
+      if(selectedFile&&fileType.includes(selectedFile.type)){
+        let reader = new FileReader();
+            reader.readAsDataURL(selectedFile);
+            reader.onloadend = (e) =>{
+              setPdfFile(e.target.result);
+              setPdfFileError('');
+            }
+      }
+      else{
+        setPdfFile(null);
+        setPdfFileError('Please select valid pdf file');
+      }
+    }
+    else{
+      console.log('select your file');
+    }
+  }
+
+  // form submit
+  const handlePdfFileSubmit=(e)=>{
+    e.preventDefault();
+    if(pdfFile!==null){
+      setViewPdf(pdfFile);
+    }
+    else{
+      setViewPdf(null);
+    }
+  }
+
   // const {data:session}=useSession();
+
   const [comment, setComment] = useState("");
   const [comments,setComments] = useState([]);
-  const [pdfFile,setPdfFile]=useState(null);
-
-  const handleFile =(e) =>{
-    let selectedFile = e.target.files[0];
-    let reader = new FileReader();
-    reader.readAsDataURL(selectedFile);
-
-  }
 
   const [likes,setLikes] = useState([]);
   const [hasLiked, sethasLiked] = useState(false);
@@ -152,15 +195,35 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
         {url}
       </div>
 
-      {/*Document */}
-      <div className='viewer'>
-        <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.min.js">
-          <Viewer fileUrl={"/Users/queserasubramoney/Documents/Builds/public-peer-review/pdf/Que Sera Subramoney_2022.pdf"}>
+      <div className='container'>
 
-          </Viewer>
-        </Worker>
-      
+    <br></br>
+    
+      <form className='form-group' onSubmit={handlePdfFileSubmit}>
+        <input type="file" className='form-control'
+          required onChange={handlePdfFileChange}
+        />
+        {pdfFileError&&<div className='error-msg'>{pdfFileError}</div>}
+        <br></br>
+        <button type="submit" className='btn btn-success btn-lg'>
+          UPLOAD
+        </button>
+      </form>
+      <br></br>
+      <h4>View PDF</h4>
+      <div className='pdf-container'>
+        {/* show pdf conditionally (if we have one)  */}
+        {viewPdf&&<><Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
+          <Viewer fileUrl={viewPdf}
+            plugins={[defaultLayoutPluginInstance]} />
+      </Worker></>}
+
+      {/* if we dont have pdf or viewPdf state is null */}
+      {!viewPdf&&<>No pdf file selected</>}
       </div>
+
+    </div>
+
 
       {/*Buttons */}
       <div className='px-4 pt-4 pb-4'>
@@ -172,6 +235,7 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
             ) : (
               <HeartIcon onClick={likePost} className='btn'/>
             )}
+
         </div>
 
         <div className='flex space-x-4 '>
@@ -230,7 +294,7 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
   )
 }
 
-export default Post
+export default Post2
 
 // function UseState(arg0: never[]): { comments: any; setComments: any; } {
 //   throw new Error('Function not implemented.');

@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { FaSearch } from 'react-icons/fa'
+import { FaRecordVinyl, FaSearch } from 'react-icons/fa'
+import results from '../api.json'
 import Post from './Post';
 
 
 function GoogleScholar() {
   const [keyWords, searchKeyWords] = useState('');
-  //const [resultPapers, listPapers] = useState([])
+  const [resultPapers, setResultPapers] = useState([])
 
   const handleChange = (event) => {
     searchKeyWords(event.target.value);
@@ -14,6 +15,20 @@ function GoogleScholar() {
   const handleClick = (event) => {
     event.preventDefault();
     searchWords(keyWords);
+    getResults();
+  }
+
+  function getResults() {
+    {
+      results.map(paper => {
+        return (
+          <div className='box' key={paper.position}>
+            {paper.title}<br></br>
+            {paper.link}<br></br>
+          </div>
+        )
+      })
+    }
   }
 
   //Search Google Scholar Function
@@ -30,15 +45,19 @@ function GoogleScholar() {
     };
 
     const callback = function (data) {
-      //console.log(data["organic_results"]);
+      console.log(data["organic_results"]);
       const resultPapers = data["organic_results"];
+      setResultPapers(resultPapers);
+
     };
     // Show result as JSON
-    const results = search.json(params, callback);
+    search.json(params, callback);
+    //console.log(results);
+
 
   };
 
-  const displayResults = (resultPapers) => {
+  /*const displayResults = (resultPapers) => {
     const listPapers = resultPapers.map(
       (element) => {
         return (
@@ -63,6 +82,7 @@ function GoogleScholar() {
       </div>
     )
   }
+  */
 
 
   return (
@@ -74,14 +94,14 @@ function GoogleScholar() {
         <FaSearch className='text-cyan-600 h-6 w-10' />
         <input className='bg-transparent outline-none text-cyan-600' type='text' placeholder='Search Google Scholar' onChange={handleChange} value={keyWords} />
         <button type='submit' hidden onClick={handleClick} />
+        <a href='GoogleScholarResults'>
+          Search
+        </a>
+
       </form>
-
       <div>
-
-        {displayResults}
-
+        {getResults}
       </div>
-
 
     </div>
   )
