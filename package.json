@@ -31,7 +31,8 @@
     "react-next": "^0.0.1",
     "react-pdf": "^5.7.2",
     "react-rating-stars-component": "^2.2.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@semantic-ui-react/css-patch": "^1.1.2",

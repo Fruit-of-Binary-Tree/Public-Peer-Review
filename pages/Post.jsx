@@ -8,15 +8,25 @@ import { db } from '../firebase-config';
 import {auth} from '../firebase-config';
 import Moment from 'react-moment';
 import Rating from '../components/Rating'
-<<<<<<< HEAD
+
 import { Worker } from '@react-pdf-viewer/core';
 import { Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 
-=======
+
 import {HeartIcon} from "@heroicons/react/outline"
 import {HeartIcon as HeartIconFilled} from "@heroicons/react/solid"
->>>>>>> af33713c8377dadb681c7b74252b3287721d7c6b
+
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  listAll,
+  list,
+} from "firebase/storage";
+import { storage } from "../firebase-config";
+import { v4 } from "uuid";
+
 //{id:any,username:any,caption:any,key:any,title:any,author:any,url:any,viewPdf:any,doc:any}
 function Post({id,username,caption,url,title,author, viewPdf,creator, description}) 
 {
@@ -37,6 +47,8 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
 
   const [likes2,setLikes2] = useState([]);
   const [hasLiked2, sethasLiked2] = useState(false);
+
+  const [imageUrls, setImageUrls] = useState([]);
 
   useEffect(
     () =>
@@ -119,6 +131,17 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
     }
   };
 
+  const storageListRef = ref(storage, "files/");
+
+useEffect(() => {
+  listAll(storageListRef).then((response) => {
+    response.items.forEach((item) => {
+      getDownloadURL(item).then((url) => {
+        setImageUrls((prev) => [...prev, url]);
+      });
+    });
+  });
+}, []); 
  
 
   return (
@@ -192,7 +215,11 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
         )}
       </p>
       
-
+      {/*Upload */}
+      {imageUrls.map((url) => {
+        return <embed src={url} />;
+      })}
+         
       {/*Comments */}
       {comments.length >0 && (
         <div className=' ml-2 h-20 overflow-y-scroll scrollbar-thumb-black scrollbar-thin'>

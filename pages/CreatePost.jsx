@@ -5,7 +5,16 @@ import { SiAcademia } from "react-icons/si";
 import { Alert } from 'react-bootstrap'
 import PaperDataService from "../services/paper.services"
 import {auth} from '../firebase-config'
-
+import { useEffect } from "react";
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  listAll,
+  list,
+} from "firebase/storage";
+import { storage } from "../firebase-config";
+import { v4 } from "uuid";
 
 function Post() {
 
@@ -17,7 +26,20 @@ function Post() {
   const [citations, setCitation] = useState("");
   const [message, setMessage] = useState({ error: false, msg: "" });
 
-  const handleSubmit = async (e: { preventDefault: () => void })  => {
+  const [imageUpload, setImageUpload] = useState(null);
+  const [imageUrls, setImageUrls] = useState([]);
+  
+  const uploadFile = () => {
+    if (imageUpload == null) return;
+    const storageRef = ref(storage, `files/${imageUpload.name + v4()}`);
+    uploadBytes(storageRef, imageUpload).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        setImageUrls((prev) => [...prev, url]);
+      });
+    });
+  };
+
+  const handleSubmit = async (e)  => {
     e.preventDefault();
     if(title == "" || author == "" || url == "" || description == "" || university == "" || citations == ""){
       setMessage({ error: true, msg: " all fields are mandatory!"});
@@ -104,10 +126,10 @@ function Post() {
                 <label className="text-center form-label w-64 px-44 text-white" form="customFile">OR</label>
 
                 <input className="form-control border-2 mt-3 border-white rounded-lg px-4 py-2 inline-block font-semibold" 
-                type="file" id="customFile" />
+                type="file" id="customFile" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
                 
                 <div className='flex flex-row px-14'>
-                <button type='submit'
+                <button type='submit' onClick={uploadFile}
                 className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold mr-5 text-white
                 hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Submit</button>  
                 
@@ -129,5 +151,6 @@ function Post() {
 }
 
 export default Post
+
 //<label class="form-label" for="customFile">Default file input example</label>
 //<input type="file" class="form-control" id="customFile" />

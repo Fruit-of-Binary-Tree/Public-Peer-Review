@@ -7,6 +7,11 @@
         @apply  h-6 w-6 hover:scale-125 cursor-pointer transition-all duration-150 ease-out  hover:text-black
     }
     .pdfContainer{
-        @apply flex items-center justify-center bg-gray-600 overflow-auto h-96 w-96
+        width: 80%;
+        height: 800px;
+        background-color: #e4e4e4;
+        overflow-y: auto;
+        display: flex;
+        margin-left: 250px;
     }
 }
