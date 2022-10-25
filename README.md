@@ -20,7 +20,10 @@ npm i react-moments <br />
 npm install --save moment <br />
 npm install --save react-moment <br />
 npm install --save moment-timezone <br />
-
+npm install react-scripts <br />
+npm install pdfjs-dist@2.15.349 <br />
+npm install @react-pdf-viewer/core@3.7.0 <br />
+npm install @react-pdf-viewer/default-layout <br />
 
 
 
