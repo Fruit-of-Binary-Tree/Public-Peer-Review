@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+import {HiOutlineHeart} from 'react-icons/hi'
+import {FaComments} from 'react-icons/fa'
 import {useSession} from 'next-auth/react';
 import {useState} from 'react';
 import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp, setDoc, doc, deleteDoc } from 'firebase/firestore';
@@ -6,15 +8,11 @@ import { db } from '../firebase-config';
 import {auth} from '../firebase-config';
 import Moment from 'react-moment';
 import Rating from '../components/Rating'
-
 import { Worker } from '@react-pdf-viewer/core';
 import { Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
-
-
 import {HeartIcon} from "@heroicons/react/outline"
 import {HeartIcon as HeartIconFilled} from "@heroicons/react/solid"
-
 import {
   ref,
   uploadBytes,
@@ -24,7 +22,6 @@ import {
 } from "firebase/storage";
 import { storage } from "../firebase-config";
 import { v4 } from "uuid";
-
 //{id:any,username:any,caption:any,key:any,title:any,author:any,url:any,viewPdf:any,doc:any}
 function Post({id,username,caption,url,title,author, viewPdf,creator, description}) 
 {
@@ -40,13 +37,36 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
 
   }
 
+  const [imageUpload, setImageUpload] = useState(null);
+  const [imageUrls, setImageUrls] = useState([]);
+
+  const storageListRef = ref(storage, "files/");
+  
+  const uploadFile = () => {
+    if (imageUpload == null) return;
+    const storageRef = ref(storage, `files/${imageUpload.name + v4()}`);
+    uploadBytes(storageRef, imageUpload).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        setImageUrls((prev) => [...prev, url]);
+      });
+    });
+  };
+
+  useEffect(() => {
+    listAll(storageListRef).then((response) => {
+      response.items.forEach((item) => {
+        getDownloadURL(item).then((url) => {
+          setImageUrls((prev) => [...prev, url]);
+        });
+      });
+    });
+  }, []);
+
   const [likes,setLikes] = useState([]);
   const [hasLiked, sethasLiked] = useState(false);
 
   const [likes2,setLikes2] = useState([]);
   const [hasLiked2, sethasLiked2] = useState(false);
-
-  const [imageUrls, setImageUrls] = useState([]);
 
   useEffect(
     () =>
@@ -129,17 +149,6 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
     }
   };
 
-  const storageListRef = ref(storage, "files/");
-
-useEffect(() => {
-  listAll(storageListRef).then((response) => {
-    response.items.forEach((item) => {
-      getDownloadURL(item).then((url) => {
-        setImageUrls((prev) => [...prev, url]);
-      });
-    });
-  });
-}, []); 
  
 
   return (
@@ -173,17 +182,7 @@ useEffect(() => {
         {url}
       </div>
 
-      {/*Document */}
-      <div className='viewer'>
-        <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.min.js">
-          <Viewer fileUrl={"/Users/queserasubramoney/Documents/Builds/public-peer-review/pdf/Que Sera Subramoney_2022.pdf"}>
 
-          </Viewer>
-        </Worker>
-      
-      </div>
-
-      <a href='./Bibtex'><FaDownload className='text-cyan-600'/></a>
 
       {/*Buttons */}
       <div className='px-4 pt-4 pb-4'>
@@ -206,6 +205,22 @@ useEffect(() => {
               <HeartIcon onClick={likePost2} className='btn'/>
             )}
         </div>
+
+        <div>
+        <input className="form-control border-2 mt-3 border-white rounded-lg px-4 py-2 inline-block font-semibold" 
+                type="file" id="customFile" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
+        <button onClick={uploadFile}
+                className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold mr-5 text-white
+                hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Upload file</button>  
+        </div>
+
+        {imageUrls.map((url) => {
+        return <embed src={url} />;
+      })}
+
+      <a href='./Bibtex' 
+                className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold text-white
+                hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Bibtex</a>  
         
       </div>
 
@@ -215,11 +230,7 @@ useEffect(() => {
         )}
       </p>
       
-      {/*Upload */}
-      {imageUrls.map((url) => {
-        return <embed src={url} />;
-      })}
-         
+
       {/*Comments */}
       {comments.length >0 && (
         <div className=' ml-2 h-20 overflow-y-scroll scrollbar-thumb-black scrollbar-thin'>
