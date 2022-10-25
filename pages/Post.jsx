@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react'
-import {HiOutlineHeart} from 'react-icons/hi'
-import {FaComments} from 'react-icons/fa'
 import {useSession} from 'next-auth/react';
 import {useState} from 'react';
 import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp, setDoc, doc, deleteDoc } from 'firebase/firestore';
@@ -184,6 +182,8 @@ useEffect(() => {
         </Worker>
       
       </div>
+
+      <a href='./Bibtex'><FaDownload className='text-cyan-600'/></a>
 
       {/*Buttons */}
       <div className='px-4 pt-4 pb-4'>
