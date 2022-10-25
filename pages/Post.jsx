@@ -211,7 +211,7 @@ useEffect(() => {
 
       <p className='flex space-between items-center p-4'>
         {likes.length > 0 && (
-          <p className="font-bold mb-1"> The average liking of the paper is : {(likes.length + likes2.length)/5} </p>
+          <p className="font-bold mb-1"> The average liking of the paper is : {(likes.length + likes2.length)/2} </p>
         )}
       </p>
       
