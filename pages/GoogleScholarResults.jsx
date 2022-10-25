@@ -1,19 +1,25 @@
 import React from 'react'
-import results from '../api.json'
+import sR from '../api.json'
+import Post from '../pages/Post';
 
 function GoogleScholarResults() {
     return (
         <div className='results'>
-            {
-                results.map(paper => {
-                    return (
-                        <div className='box' key={paper.position}>
-                            {paper.title}<br></br>
-                            {paper.link}<br></br>
-                        </div>
-                    )
-                })
-            }
+            <ul>
+                {sR.map(paper => (
+                    <Post
+                        id={paper.result_id}
+                        // username={Post.data().username}
+                        title={paper.title}
+                        author={paper.publication_info.summary}
+                        description={paper.snippet}
+                        url={paper.link}
+                        creator={"Google Scholar"}
+
+                    />
+
+                ))}
+            </ul>
         </div>
 
     );

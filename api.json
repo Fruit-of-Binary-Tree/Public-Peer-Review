@@ -1,67 +1,428 @@
 [
     {
         "position": 0,
-        "title": "Luteal-phase ovarian stimulation is feasible for producing competent oocytes in women undergoing in vitro fertilization/intracytoplasmic sperm injection …",
-        "result_id": "NeQqxxURtXkJ",
-        "type": "Html",
-        "link": "https://www.sciencedirect.com/science/article/pii/S0015028213030574"
-    },
-    {
-        "position": 1,
         "title": "Medroxyprogesterone acetate is an effective oral alternative for preventing premature luteinizing hormone surges in women undergoing controlled ovarian …",
         "result_id": "3xsNPiScQn4J",
         "type": "Html",
-        "link": "https://www.sciencedirect.com/science/article/pii/S0015028215002277"
+        "link": "https://www.sciencedirect.com/science/article/pii/S0015028215002277",
+        "snippet": "Objective To investigate the use of medroxyprogesterone acetate (MPA) to prevent LH surge during controlled ovarian hyperstimulation (COH) and to compare cycle characteristics and …",
+        "publication_info": {
+            "summary": "Y Kuang, Q Chen, Y Fu, Y Wang, Q Hong, Q Lyu, A Ai… - Fertility and sterility, 2015 - Elsevier"
+        },
+        "resources": [
+            {
+                "title": "sciencedirect.com",
+                "file_format": "HTML",
+                "link": "https://www.sciencedirect.com/science/article/pii/S0015028215002277"
+            }
+        ],
+        "inline_links": {
+            "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=3xsNPiScQn4J",
+            "html_version": "https://www.sciencedirect.com/science/article/pii/S0015028215002277",
+            "cited_by": {
+                "total": 276,
+                "link": "https://scholar.google.com/scholar?cites=9098005876715625439&as_sdt=5,39&sciodt=0,39&hl=en",
+                "cites_id": "9098005876715625439",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C39&cites=9098005876715625439&engine=google_scholar&hl=en"
+            },
+            "related_pages_link": "https://scholar.google.com/scholar?q=related:3xsNPiScQn4J:scholar.google.com/&scioq=AI&hl=en&as_sdt=0,39",
+            "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C39&engine=google_scholar&hl=en&q=related%3A3xsNPiScQn4J%3Ascholar.google.com%2F",
+            "versions": {
+                "total": 5,
+                "link": "https://scholar.google.com/scholar?cluster=9098005876715625439&hl=en&as_sdt=0,39",
+                "cluster_id": "9098005876715625439",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C39&cluster=9098005876715625439&engine=google_scholar&hl=en"
+            }
+        }
+    },
+    {
+        "position": 1,
+        "title": "Luteal-phase ovarian stimulation is feasible for producing competent oocytes in women undergoing in vitro fertilization/intracytoplasmic sperm injection …",
+        "result_id": "NeQqxxURtXkJ",
+        "type": "Html",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0015028213030574",
+        "snippet": "Objective To explore the feasibility of luteal-phase ovarian stimulation using hMG and letrozole in terms of ovarian response and pregnancy outcome using frozen-thawed embryo …",
+        "publication_info": {
+            "summary": "Y Kuang, Q Hong, Q Chen, Q Lyu, A Ai, Y Fu… - Fertility and sterility, 2014 - Elsevier"
+        },
+        "resources": [
+            {
+                "title": "sciencedirect.com",
+                "file_format": "HTML",
+                "link": "https://www.sciencedirect.com/science/article/pii/S0015028213030574"
+            }
+        ],
+        "inline_links": {
+            "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=NeQqxxURtXkJ",
+            "html_version": "https://www.sciencedirect.com/science/article/pii/S0015028213030574",
+            "cited_by": {
+                "total": 245,
+                "link": "https://scholar.google.com/scholar?cites=8769934634607371317&as_sdt=5,39&sciodt=0,39&hl=en",
+                "cites_id": "8769934634607371317",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C39&cites=8769934634607371317&engine=google_scholar&hl=en"
+            },
+            "related_pages_link": "https://scholar.google.com/scholar?q=related:NeQqxxURtXkJ:scholar.google.com/&scioq=AI&hl=en&as_sdt=0,39",
+            "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C39&engine=google_scholar&hl=en&q=related%3ANeQqxxURtXkJ%3Ascholar.google.com%2F",
+            "versions": {
+                "total": 5,
+                "link": "https://scholar.google.com/scholar?cluster=8769934634607371317&hl=en&as_sdt=0,39",
+                "cluster_id": "8769934634607371317",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C39&cluster=8769934634607371317&engine=google_scholar&hl=en"
+            }
+        }
     },
     {
         "position": 2,
         "title": "Double stimulations during the follicular and luteal phases of poor responders in IVF/ICSI programmes (Shanghai protocol)",
         "result_id": "RPKFyv18mNkJ",
-        "link": "https://www.sciencedirect.com/science/article/pii/S1472648314004854"
+        "link": "https://www.sciencedirect.com/science/article/pii/S1472648314004854",
+        "snippet": "Previous studies have shown that existing antral follicles in the luteal phase enable ovarian stimulation. In a pilot study, the efficacy of double stimulations during the follicular and luteal …",
+        "publication_info": {
+            "summary": "Y Kuang, Q Chen, Q Hong, Q Lyu, A Ai, Y Fu… - Reproductive …, 2014 - Elsevier"
+        },
+        "resources": [
+            {
+                "title": "hostadm.net",
+                "file_format": "PDF",
+                "link": "http://zunbo.sz.hostadm.net/upload/Article/Big/1412/201412124632.pdf"
+            }
+        ],
+        "inline_links": {
+            "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=RPKFyv18mNkJ",
+            "cited_by": {
+                "total": 250,
+                "link": "https://scholar.google.com/scholar?cites=15679419532156727876&as_sdt=5,39&sciodt=0,39&hl=en",
+                "cites_id": "15679419532156727876",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C39&cites=15679419532156727876&engine=google_scholar&hl=en"
+            },
+            "related_pages_link": "https://scholar.google.com/scholar?q=related:RPKFyv18mNkJ:scholar.google.com/&scioq=AI&hl=en&as_sdt=0,39",
+            "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C39&engine=google_scholar&hl=en&q=related%3ARPKFyv18mNkJ%3Ascholar.google.com%2F",
+            "versions": {
+                "total": 8,
+                "link": "https://scholar.google.com/scholar?cluster=15679419532156727876&hl=en&as_sdt=0,39",
+                "cluster_id": "15679419532156727876",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C39&cluster=15679419532156727876&engine=google_scholar&hl=en"
+            }
+        }
     },
     {
         "position": 3,
         "title": "Comparison of live-birth defects after luteal-phase ovarian stimulation vs. conventional ovarian stimulation for in vitro fertilization and vitrified embryo transfer …",
         "result_id": "YL7fEjnte5UJ",
         "type": "Html",
-        "link": "https://www.sciencedirect.com/science/article/pii/S0015028215001508"
+        "link": "https://www.sciencedirect.com/science/article/pii/S0015028215001508",
+        "snippet": "Objective To assess live-birth defects after a luteal-phase ovarian-stimulation regimen (LPS) for in vitro fertilization (IVF) and vitrified embryo transfer (ET) cycles. Design Retrospective …",
+        "publication_info": {
+            "summary": "H Chen, Y Wang, Q Lyu, A Ai, Y Fu, H Tian, R Cai… - Fertility and sterility, 2015 - Elsevier"
+        },
+        "resources": [
+            {
+                "title": "sciencedirect.com",
+                "file_format": "HTML",
+                "link": "https://www.sciencedirect.com/science/article/pii/S0015028215001508"
+            }
+        ],
+        "inline_links": {
+            "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=YL7fEjnte5UJ",
+            "html_version": "https://www.sciencedirect.com/science/article/pii/S0015028215001508",
+            "cited_by": {
+                "total": 123,
+                "link": "https://scholar.google.com/scholar?cites=10771463763172245088&as_sdt=5,39&sciodt=0,39&hl=en",
+                "cites_id": "10771463763172245088",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C39&cites=10771463763172245088&engine=google_scholar&hl=en"
+            },
+            "related_pages_link": "https://scholar.google.com/scholar?q=related:YL7fEjnte5UJ:scholar.google.com/&scioq=AI&hl=en&as_sdt=0,39",
+            "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C39&engine=google_scholar&hl=en&q=related%3AYL7fEjnte5UJ%3Ascholar.google.com%2F",
+            "versions": {
+                "total": 6,
+                "link": "https://scholar.google.com/scholar?cluster=10771463763172245088&hl=en&as_sdt=0,39",
+                "cluster_id": "10771463763172245088",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C39&cluster=10771463763172245088&engine=google_scholar&hl=en"
+            }
+        }
     },
     {
         "position": 4,
         "title": "Polydopamine and its derivative materials: synthesis and promising applications in energy, environmental, and biomedical fields",
         "result_id": "l3l9gRCbgo4J",
-        "link": "https://pubs.acs.org/doi/full/10.1021/cr400407a"
+        "link": "https://pubs.acs.org/doi/full/10.1021/cr400407a",
+        "snippet": "The observation and investigation of phenomena in the natural world can inspire the discovery of new materials and a greater understanding of the underlying physical processes. The …",
+        "publication_info": {
+            "summary": "Y Liu, K Ai, L Lu - Chemical reviews, 2014 - ACS Publications",
+            "authors": [
+                {
+                    "name": "K Ai",
+                    "link": "https://scholar.google.com/citations?user=VhQDcrgAAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=VhQDcrgAAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "VhQDcrgAAAAJ"
+                }
+            ]
+        },
+        "inline_links": {
+            "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=l3l9gRCbgo4J",
+            "cited_by": {
+                "total": 3537,
+                "link": "https://scholar.google.com/scholar?cites=10268940595552418199&as_sdt=5,39&sciodt=0,39&hl=en",
+                "cites_id": "10268940595552418199",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C39&cites=10268940595552418199&engine=google_scholar&hl=en"
+            },
+            "related_pages_link": "https://scholar.google.com/scholar?q=related:l3l9gRCbgo4J:scholar.google.com/&scioq=AI&hl=en&as_sdt=0,39",
+            "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C39&engine=google_scholar&hl=en&q=related%3Al3l9gRCbgo4J%3Ascholar.google.com%2F",
+            "versions": {
+                "total": 5,
+                "link": "https://scholar.google.com/scholar?cluster=10268940595552418199&hl=en&as_sdt=0,39",
+                "cluster_id": "10268940595552418199",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C39&cluster=10268940595552418199&engine=google_scholar&hl=en"
+            }
+        }
     },
     {
         "position": 5,
-        "title": "The fourth industrial revolution",
-        "result_id": "xnOtZE9rB1oJ",
-        "type": "Pdf",
-        "link": "https://www.researchgate.net/profile/Rudolf-M-Oosthuizen/publication/362530500_The_Fourth_Industrial_Revolution_STARA_Industrial_Psychologists_in_future_workplaces/links/62ee886588b83e7320b36d34/The-Fourth-Industrial-Revolution-STARA-Industrial-Psychologists-in-future-workplaces.pdf"
+        "title": "Molecular mechanisms controlling bone formation during fracture healing and distraction osteogenesis",
+        "result_id": "SP2UN52em3EJ",
+        "link": "https://journals.sagepub.com/doi/abs/10.1177/154405910808700215",
+        "snippet": "Fracture healing and distraction osteogenesis have important applications in orthopedic, maxillofacial, and periodontal treatment. In this review, the cellular and molecular mechanisms …",
+        "publication_info": {
+            "summary": "ZS Ai-Aql, AS Alagl, DT Graves… - Journal of dental …, 2008 - journals.sagepub.com",
+            "authors": [
+                {
+                    "name": "AS Alagl",
+                    "link": "https://scholar.google.com/citations?user=vQMVuEEAAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=vQMVuEEAAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "vQMVuEEAAAAJ"
+                }
+            ]
+        },
+        "resources": [
+            {
+                "title": "nih.gov",
+                "file_format": "HTML",
+                "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3109437/"
+            }
+        ],
+        "inline_links": {
+            "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=SP2UN52em3EJ",
+            "html_version": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3109437/",
+            "cited_by": {
+                "total": 832,
+                "link": "https://scholar.google.com/scholar?cites=8186311145755573576&as_sdt=5,39&sciodt=0,39&hl=en",
+                "cites_id": "8186311145755573576",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C39&cites=8186311145755573576&engine=google_scholar&hl=en"
+            },
+            "related_pages_link": "https://scholar.google.com/scholar?q=related:SP2UN52em3EJ:scholar.google.com/&scioq=AI&hl=en&as_sdt=0,39",
+            "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C39&engine=google_scholar&hl=en&q=related%3ASP2UN52em3EJ%3Ascholar.google.com%2F",
+            "versions": {
+                "total": 14,
+                "link": "https://scholar.google.com/scholar?cluster=8186311145755573576&hl=en&as_sdt=0,39",
+                "cluster_id": "8186311145755573576",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C39&cluster=8186311145755573576&engine=google_scholar&hl=en"
+            }
+        }
     },
     {
         "position": 6,
-        "title": "Molecular mechanisms controlling bone formation during fracture healing and distraction osteogenesis",
-        "result_id": "SP2UN52em3EJ",
-        "link": "https://journals.sagepub.com/doi/abs/10.1177/154405910808700215"
+        "title": "Computing interaction effects and standard errors in logit and probit models",
+        "result_id": "C2ACup_p0TsJ",
+        "link": "https://journals.sagepub.com/doi/abs/10.1177/1536867X0400400206",
+        "snippet": "This paper explains why computing the marginal effect of a change in two variables is more complicated in nonlinear models than in linear models. The command inteff computes the …",
+        "publication_info": {
+            "summary": "EC Norton, H Wang, C Ai - The Stata Journal, 2004 - journals.sagepub.com",
+            "authors": [
+                {
+                    "name": "EC Norton",
+                    "link": "https://scholar.google.com/citations?user=Xn9sEJgAAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Xn9sEJgAAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "Xn9sEJgAAAAJ"
+                },
+                {
+                    "name": "H Wang",
+                    "link": "https://scholar.google.com/citations?user=IZMk9AcAAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=IZMk9AcAAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "IZMk9AcAAAAJ"
+                },
+                {
+                    "name": "C Ai",
+                    "link": "https://scholar.google.com/citations?user=oQD_QIcAAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=oQD_QIcAAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "oQD_QIcAAAAJ"
+                }
+            ]
+        },
+        "resources": [
+            {
+                "title": "sagepub.com",
+                "file_format": "PDF",
+                "link": "https://journals.sagepub.com/doi/pdf/10.1177/1536867X0400400206"
+            }
+        ],
+        "inline_links": {
+            "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=C2ACup_p0TsJ",
+            "cited_by": {
+                "total": 2144,
+                "link": "https://scholar.google.com/scholar?cites=4310483190600065035&as_sdt=5,39&sciodt=0,39&hl=en",
+                "cites_id": "4310483190600065035",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C39&cites=4310483190600065035&engine=google_scholar&hl=en"
+            },
+            "related_pages_link": "https://scholar.google.com/scholar?q=related:C2ACup_p0TsJ:scholar.google.com/&scioq=AI&hl=en&as_sdt=0,39",
+            "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C39&engine=google_scholar&hl=en&q=related%3AC2ACup_p0TsJ%3Ascholar.google.com%2F",
+            "versions": {
+                "total": 11,
+                "link": "https://scholar.google.com/scholar?cluster=4310483190600065035&hl=en&as_sdt=0,39",
+                "cluster_id": "4310483190600065035",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C39&cluster=4310483190600065035&engine=google_scholar&hl=en"
+            }
+        }
     },
     {
         "position": 7,
-        "title": "Computing interaction effects and standard errors in logit and probit models",
-        "result_id": "C2ACup_p0TsJ",
-        "link": "https://journals.sagepub.com/doi/abs/10.1177/1536867X0400400206"
-    },
-    {
-        "position": 8,
         "title": "Correlation of chest CT and RT-PCR testing in coronavirus disease 2019 (COVID-19) in China: a report of 1014 cases",
         "result_id": "-fbF8sBpaxcJ",
         "type": "Html",
-        "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233399/"
+        "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233399/",
+        "snippet": "Background Chest CT is used for diagnosis of 2019 novel coronavirus disease (COVID-19), as an important complement to the reverse-transcription polymerase chain reaction (RT-PCR…",
+        "publication_info": {
+            "summary": "T Ai, Z Yang, H Hou, C Zhan, C Chen, W Lv, Q Tao… - Radiology, 2020 - ncbi.nlm.nih.gov",
+            "authors": [
+                {
+                    "name": "Q Tao",
+                    "link": "https://scholar.google.com/citations?user=djCHmzsAAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=djCHmzsAAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "djCHmzsAAAAJ"
+                }
+            ]
+        },
+        "resources": [
+            {
+                "title": "nih.gov",
+                "file_format": "HTML",
+                "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233399/"
+            }
+        ],
+        "inline_links": {
+            "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=-fbF8sBpaxcJ",
+            "html_version": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233399/",
+            "cited_by": {
+                "total": 5963,
+                "link": "https://scholar.google.com/scholar?cites=1687558762808080121&as_sdt=5,39&sciodt=0,39&hl=en",
+                "cites_id": "1687558762808080121",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C39&cites=1687558762808080121&engine=google_scholar&hl=en"
+            },
+            "related_pages_link": "https://scholar.google.com/scholar?q=related:-fbF8sBpaxcJ:scholar.google.com/&scioq=AI&hl=en&as_sdt=0,39",
+            "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C39&engine=google_scholar&hl=en&q=related%3A-fbF8sBpaxcJ%3Ascholar.google.com%2F",
+            "versions": {
+                "total": 17,
+                "link": "https://scholar.google.com/scholar?cluster=1687558762808080121&hl=en&as_sdt=0,39",
+                "cluster_id": "1687558762808080121",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C39&cluster=1687558762808080121&engine=google_scholar&hl=en"
+            }
+        }
+    },
+    {
+        "position": 8,
+        "title": "Interaction terms in logit and probit models",
+        "result_id": "jExzXhUatekJ",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0165176503000326",
+        "snippet": "The magnitude of the interaction effect in nonlinear models does not equal the marginal effect of the interaction term, can be of opposite sign, and its statistical significance is not …",
+        "publication_info": {
+            "summary": "C Ai, EC Norton - Economics letters, 2003 - Elsevier",
+            "authors": [
+                {
+                    "name": "C Ai",
+                    "link": "https://scholar.google.com/citations?user=oQD_QIcAAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=oQD_QIcAAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "oQD_QIcAAAAJ"
+                },
+                {
+                    "name": "EC Norton",
+                    "link": "https://scholar.google.com/citations?user=Xn9sEJgAAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=Xn9sEJgAAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "Xn9sEJgAAAAJ"
+                }
+            ]
+        },
+        "resources": [
+            {
+                "title": "uic.edu",
+                "file_format": "PDF",
+                "link": "https://hhstokes.people.uic.edu/ftp/e535/probit/AiNorton.pdf"
+            }
+        ],
+        "inline_links": {
+            "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=jExzXhUatekJ",
+            "cited_by": {
+                "total": 6521,
+                "link": "https://scholar.google.com/scholar?cites=16840395060703087756&as_sdt=5,39&sciodt=0,39&hl=en",
+                "cites_id": "16840395060703087756",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C39&cites=16840395060703087756&engine=google_scholar&hl=en"
+            },
+            "related_pages_link": "https://scholar.google.com/scholar?q=related:jExzXhUatekJ:scholar.google.com/&scioq=AI&hl=en&as_sdt=0,39",
+            "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C39&engine=google_scholar&hl=en&q=related%3AjExzXhUatekJ%3Ascholar.google.com%2F",
+            "versions": {
+                "total": 8,
+                "link": "https://scholar.google.com/scholar?cluster=16840395060703087756&hl=en&as_sdt=0,39",
+                "cluster_id": "16840395060703087756",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C39&cluster=16840395060703087756&engine=google_scholar&hl=en"
+            }
+        }
     },
     {
         "position": 9,
-        "title": "Interaction terms in logit and probit models",
-        "result_id": "jExzXhUatekJ",
-        "link": "https://www.sciencedirect.com/science/article/pii/S0165176503000326"
+        "title": "Active site engineering in porous electrocatalysts",
+        "result_id": "x6FJCH0RDZ4J",
+        "link": "https://onlinelibrary.wiley.com/doi/abs/10.1002/adma.202002435",
+        "snippet": "Electrocatalysis is at the center of many sustainable energy conversion technologies that are being developed to reduce the dependence on fossil fuels. The past decade has witnessed …",
+        "publication_info": {
+            "summary": "H Chen, X Liang, Y Liu, X Ai, T Asefa… - Advanced …, 2020 - Wiley Online Library",
+            "authors": [
+                {
+                    "name": "H Chen",
+                    "link": "https://scholar.google.com/citations?user=bt61mgQAAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=bt61mgQAAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "bt61mgQAAAAJ"
+                },
+                {
+                    "name": "Y Liu",
+                    "link": "https://scholar.google.com/citations?user=7naZs84AAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=7naZs84AAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "7naZs84AAAAJ"
+                },
+                {
+                    "name": "X Ai",
+                    "link": "https://scholar.google.com/citations?user=5GaJfqIAAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=5GaJfqIAAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "5GaJfqIAAAAJ"
+                },
+                {
+                    "name": "T Asefa",
+                    "link": "https://scholar.google.com/citations?user=bp1OJXwAAAAJ&hl=en&oi=sra",
+                    "serpapi_scholar_link": "https://serpapi.com/search.json?author_id=bp1OJXwAAAAJ&engine=google_scholar_author&hl=en",
+                    "author_id": "bp1OJXwAAAAJ"
+                }
+            ]
+        },
+        "resources": [
+            {
+                "title": "researchgate.net",
+                "file_format": "PDF",
+                "link": "https://www.researchgate.net/profile/Hui-Chen-38/publication/342945928_Active_Site_Engineering_in_Porous_Electrocatalysts/links/608e5569a6fdccaebdffed0e/Active-Site-Engineering-in-Porous-Electrocatalysts.pdf"
+            }
+        ],
+        "inline_links": {
+            "serpapi_cite_link": "https://serpapi.com/search.json?engine=google_scholar_cite&q=x6FJCH0RDZ4J",
+            "cited_by": {
+                "total": 192,
+                "link": "https://scholar.google.com/scholar?cites=11388778261397479879&as_sdt=5,39&sciodt=0,39&hl=en",
+                "cites_id": "11388778261397479879",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=5%2C39&cites=11388778261397479879&engine=google_scholar&hl=en"
+            },
+            "related_pages_link": "https://scholar.google.com/scholar?q=related:x6FJCH0RDZ4J:scholar.google.com/&scioq=AI&hl=en&as_sdt=0,39",
+            "serpapi_related_pages_link": "https://serpapi.com/search.json?as_sdt=0%2C39&engine=google_scholar&hl=en&q=related%3Ax6FJCH0RDZ4J%3Ascholar.google.com%2F",
+            "versions": {
+                "total": 6,
+                "link": "https://scholar.google.com/scholar?cluster=11388778261397479879&hl=en&as_sdt=0,39",
+                "cluster_id": "11388778261397479879",
+                "serpapi_scholar_link": "https://serpapi.com/search.json?as_sdt=0%2C39&cluster=11388778261397479879&engine=google_scholar&hl=en"
+            }
+        }
     }
 ]
