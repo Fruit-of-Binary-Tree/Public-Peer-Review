@@ -42,15 +42,7 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
 
   const storageListRef = ref(storage, "files/");
   
-  const uploadFile = () => {
-    if (imageUpload == null) return;
-    const storageRef = ref(storage, `files/${imageUpload.name + v4()}`);
-    uploadBytes(storageRef, imageUpload).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        setImageUrls((prev) => [...prev, url]);
-      });
-    });
-  };
+ 
 
   useEffect(() => {
     listAll(storageListRef).then((response) => {
@@ -206,13 +198,7 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
             )}
         </div>
 
-        <div>
-        <input className="form-control border-2 mt-3 border-white rounded-lg px-4 py-2 inline-block font-semibold" 
-                type="file" id="customFile" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
-        <button onClick={uploadFile}
-                className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold mr-5 text-white
-                hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Upload file</button>  
-        </div>
+      
 
         {imageUrls.map((url) => {
         return <embed src={url} />;
