@@ -60,17 +60,17 @@ function Header() {
         <p className='ml-1 text-lg font-semibold'>Home</p>
       </div>
 
-    
+
 
       <div className='flex items-center '>
         <a href='./SearchPeerReview'
           className=' mr-5 ml-5 inline-block font-semibold text-cyan-600 text-lg  hover:text-black'>Search Peer Review</a>
       </div>
 
-      {/*Internal search */}
+      {/*Google Scholar Search */}
       <div className='flex items-center '>
-        <a href='./GoogleScholar'
-          className=' mr-5 ml-5 inline-block font-semibold text-cyan-600 text-lg  hover:text-black'>Search Google Scholar</a>
+        <a href='./GoogleScholarHome'
+          className=' mr-5 ml-5 inline-block font-semibold text-cyan-600 text-lg  hover:text-black'>Access Google Scholar</a>
       </div>
 
       {/* Logout button and styling, onClick will call logout function */}
