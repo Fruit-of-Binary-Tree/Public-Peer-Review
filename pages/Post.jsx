@@ -34,8 +34,12 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
     let selectedFile = e.target.files[0];
     let reader = new FileReader();
     reader.readAsDataURL(selectedFile);
-
   }
+  
+  const deleteUser = async () => {
+    const userDoc = doc(db, "papers", "9jjppD734ycOpURQp8Xc");
+    await deleteDoc(userDoc);
+  };
 
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
@@ -221,6 +225,10 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
       <a href='./Bibtex' 
                 className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold text-white
                 hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Bibtex</a>  
+
+      <button className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold mr-5 text-white
+          hover:bg-white hover:text-cyan-600 transition ease-out duration-500'
+          onClick={() => { deleteUser() }} > Delete </button> 
         
       </div>
 
