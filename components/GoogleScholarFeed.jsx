@@ -5,7 +5,7 @@ import { db } from '../firebase-config'
 import PostGoogleScholar from '../pages/PostGoogleScholar';
 import { FiRefreshCw } from 'react-icons/fi'
 import { useSession } from "next-auth/react";
-import { FaHome, FaSearch } from 'react-icons/fa'
+import GSHeader from '../components/GSHeader';
 
 
 export default function List() {
@@ -42,14 +42,9 @@ export default function List() {
     }
 
     return (
-        <div className='sticky top-0 z-50 flex justify-between bg-zinc-300 px-4 py-2 shadow-sm '>
-            <div className='mr-60 ml-60'>
-                <div className='flex items-center text-cyan-600 font-semibold text-lg'>
-                    <FaHome className='h-6 w-6 mr-1' />
-                    <a href='./Home'>Home</a>
-
-                    <a href='./GoogleScholar'>Search Google Scholar</a>
-                </div>
+        <div className=''>
+            <GSHeader/>
+            <div className='flex mr-60 ml-60'>
                 <FiRefreshCw
                     onClick={() => getPapers()}
                     className='btn text-cyan-600' />

@@ -1,6 +1,5 @@
 import GoogleScholarFeed from '../components/GoogleScholarFeed';
 import React from 'react';
-//import { FaHome, FaSearch } from 'react-icons/fa'
 
 function GoogleScholarHome() {
 
