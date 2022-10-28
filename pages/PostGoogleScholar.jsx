@@ -127,7 +127,7 @@ function GoogleScholarPost({ id, username, caption, url, title, author, viewPdf,
 
     return (
 
-        <div className='bg-gray-100 my-7 border rounded-lg border-cyan-600'>
+        <div className='bg-gray-100 my-7 border rounded-lg border-cyan-600 max-w-5xl'>
             {/* Header */}
             <div className='flex items-center p-5'>
                 <p className='flex-1 font-bold'>{creator}</p>
