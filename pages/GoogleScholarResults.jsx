@@ -1,13 +1,13 @@
 import React from 'react'
 import sR from '../api.json'
-import Post from '../pages/Post';
+import PostGoogleScholar from '../pages/PostGoogleScholar';
 
 function GoogleScholarResults() {
     return (
         <div className='results'>
             <ul>
                 {sR.map(paper => (
-                    <Post
+                    <PostGoogleScholar
                         id={paper.result_id}
                         // username={Post.data().username}
                         title={paper.title}

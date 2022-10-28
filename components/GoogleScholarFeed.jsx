@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FaDownload } from 'react-icons/fa'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../firebase-config'
-import Post from '../pages/Post';
+import PostGoogleScholar from '../pages/PostGoogleScholar';
 import { FiRefreshCw } from 'react-icons/fi'
 import { useSession } from "next-auth/react";
 import { FaHome, FaSearch } from 'react-icons/fa'
@@ -57,7 +57,7 @@ export default function List() {
 
                 <ul>
                     {papers.map(paper => (
-                        <Post
+                        <PostGoogleScholar
                             id={paper.id}
                             // username={Post.data().username}
                             title={paper.data.Title}

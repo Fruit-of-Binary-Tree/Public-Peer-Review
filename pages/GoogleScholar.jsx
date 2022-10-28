@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { FaRecordVinyl, FaSearch, FaHome } from 'react-icons/fa'
 import { auth } from '../firebase-config';
-import Post from './Post';
+import PostGoogleScholar from './PostGoogleScholar';
 import { set } from 'react-hook-form';
 //import { setDoc } from 'firebase/firestore';
 import { db } from "../firebase-config";
@@ -161,7 +161,7 @@ function GoogleScholar() {
           {papers.filter((paper) =>
             paper.data.query.toLowerCase().includes(queryR)
           ).map(paper => (
-            <Post
+            <PostGoogleScholar
               id={paper.id}
               title={paper.data.Title}
               author={paper.data.author}
