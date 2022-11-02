@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { FaDownload } from 'react-icons/fa'
-import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../firebase-config'
 import Post from '../pages/Post';
 import { FiRefreshCw } from 'react-icons/fi'
 import { useSession } from "next-auth/react";
-
+import { addDoc, collection, getDocs, onSnapshot, orderBy, query, serverTimestamp, setDoc, doc, deleteDoc } from 'firebase/firestore';
 
 export default function List() {
 
 
   const [papers, setPapers] = useState([])
-
-
+  const deleteUser = async (id) => {
+    const userDoc = doc(db, "papers", id);
+    await deleteDoc(userDoc);
+  };
+  
   useEffect(() => {
     getPapers()
   }, [])
@@ -42,6 +44,7 @@ export default function List() {
 
   return (
     <div className='mr-60 ml-60'>
+      
       <FiRefreshCw
         onClick={() => getPapers()}
         className='btn text-cyan-600' />
@@ -55,7 +58,10 @@ export default function List() {
             description={paper.data.description}
             url={paper.data.url}
             creator={paper.data.creator.name}
-
+            del = {<button className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold mr-5 text-white
+            hover:bg-white hover:text-cyan-600 transition ease-out duration-500'
+                onClick={() => { deleteUser(paper.id) }} > Delete </button>}
+          
           />
 
         ))}
