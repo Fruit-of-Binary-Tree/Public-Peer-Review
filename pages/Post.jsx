@@ -183,7 +183,6 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
 
     {/*DELETE */}
     <div className='p-5 truncate'>
-      <span className='p-5 truncate font-semibold text-cyan-600'>Delete:</span>
         {del}
       </div>
 
