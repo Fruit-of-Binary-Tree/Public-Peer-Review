@@ -23,7 +23,7 @@ import {
 import { storage } from "../firebase-config";
 import { v4 } from "uuid";
 //{id:any,username:any,caption:any,key:any,title:any,author:any,url:any,viewPdf:any,doc:any}
-function Post({id,username,caption,url,title,author, viewPdf,creator, description}) 
+function Post({id,username,caption,url,title,author, viewPdf,creator, description, del}) 
 {
   // const {data:session}=useSession();
   const [comment, setComment] = useState("");
@@ -35,11 +35,6 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
     let reader = new FileReader();
     reader.readAsDataURL(selectedFile);
   }
-  
-  const deleteUser = async () => {
-    const userDoc = doc(db, "papers", "9jjppD734ycOpURQp8Xc");
-    await deleteDoc(userDoc);
-  };
 
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
@@ -186,6 +181,11 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
         {url}
       </div>
 
+    {/*DELETE */}
+    <div className='p-5 truncate'>
+      <span className='p-5 truncate font-semibold text-cyan-600'>Delete:</span>
+        {del}
+      </div>
 
 
       {/*Buttons */}
@@ -216,6 +216,8 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
         <button onClick={uploadFile}
                 className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold mr-5 text-white
                 hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Upload file</button>  
+        
+        
         </div>
 
         {imageUrls.map((url) => {
@@ -226,9 +228,7 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
                 className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold text-white
                 hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Bibtex</a>  
 
-      <button className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold mr-5 text-white
-          hover:bg-white hover:text-cyan-600 transition ease-out duration-500'
-          onClick={() => { deleteUser() }} > Delete </button> 
+          
         
       </div>
 
