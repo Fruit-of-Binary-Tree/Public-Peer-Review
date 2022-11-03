@@ -66,6 +66,11 @@ function Header() {
         <a href='./SearchPeerReview'
           className=' mr-5 ml-5 inline-block font-semibold text-cyan-600 text-lg  hover:text-black'>Search Peer Review</a>
       </div>
+      
+      <div className='flex items-center '>
+        <a href='./Bibtex2'
+          className=' mr-5 ml-5 inline-block font-semibold text-cyan-600 text-lg  hover:text-black'>Bibtex2</a>
+      </div>
 
       {/*Google Scholar Search */}
       <div className='flex items-center '>
