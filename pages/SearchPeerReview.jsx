@@ -56,7 +56,7 @@ export default function SearchPeerReview() {
           <form className='flex items-center space-x-2 border border-cyan-600 rounded-lg
             bg-gray-100 py-1 px-3 ml-10'>
             <FaSearch className='text-cyan-600 h-6 w-10' />
-            <input className='bg-transparent outline-none text-cyan-600' type='text' placeholder='Search Peer Review' onChange={(e) => setQuery(e.target.value)} />
+            <input className='bg-transparent outline-none text-cyan-600' type='text' placeholder='Search by Author' onChange={(e) => setQuery(e.target.value)} />
             <button type='submit' hidden />
           </form>
 
