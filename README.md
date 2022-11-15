@@ -4,7 +4,7 @@
 
 [![Running Code Coverage](https://github.com/Fruit-of-Binary-Tree/Public-Peer-Review/actions/workflows/codecov.yml/badge.svg)](https://github.com/Fruit-of-Binary-Tree/Public-Peer-Review/actions/workflows/codecov.yml)
 
-Packages to install:
+# Packages to install:
 
 npm install react <br />
 npm install firebase <br />
@@ -35,6 +35,9 @@ yarn add --dev @babel/preset-typescript <br />
 npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom babel-jest identity-obj-proxy
 
 
+# To run and build application:
 
+npm run build
+npm run start
 
 
