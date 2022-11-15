@@ -47,7 +47,7 @@ function Header() {
 
 
   return (
-    <div className='sticky top-0 z-50 flex justify-between bg-zinc-300 px-4 py-2 shadow-sm '>
+    <div className='sticky border-2 border-cyan-600 top-0 z-50 flex justify-between bg-zinc-300 px-4 py-2 shadow-sm '>
       <div className='text-left mx- 10 font-bold'>
         {/*Title*/}
         <span className='text-cyan-600 text-2xl'>Genius</span>
@@ -69,7 +69,7 @@ function Header() {
       
       <div className='flex items-center '>
         <a href='./Bibtex2'
-          className=' mr-5 ml-5 inline-block font-semibold text-cyan-600 text-lg  hover:text-black'>Bibtex2</a>
+          className=' mr-5 ml-5 inline-block font-semibold text-cyan-600 text-lg  hover:text-black'>Bibtex</a>
       </div>
 
       {/*Google Scholar Search */}

@@ -3,6 +3,8 @@ import React, { useState, useCallback } from 'react'
 import { FaGoogle, FaRegEnvelope } from 'react-icons/fa'
 import { MdLockOutline } from 'react-icons/md'
 import { auth, provider } from "../firebase-config.js"
+
+
 /*=======
 import React, { useState, useCallback } from 'react'
 import { FaGoogle, FaRegEnvelope } from 'react-icons/fa'
@@ -30,12 +32,20 @@ function Login() {
   //initializing variables
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [passwordError, setpError] = useState("");
+  const [emailError, seteError] = useState("");
+  const [hasAccount, setHasAccount] = useState(false);
+  const  clearErrors = () => {
+    seteError("");
+    setpError("");
+  }
 
   const [user, setUser] = useState({});
   const router = useRouter()
 
 
   const login = async () => {
+    clearErrors();
   
     //router.push('/Home');           // use if you want to bypass login
     
@@ -52,8 +62,23 @@ function Login() {
         // ...
       })
       .catch((error) => {
+        // switch(error.coode)
+        // {
+        //   case "auth/invalid-email":
+        //   case "auth/user-disabled":
+        //   case "auth/user-not-found":
+        //     seteError(error.message);
+        //     break;
+        //   case "auth/wrong-password":
+        //     setpError(error.message);
+          
+        //     break;
+
+        // }
         const errorCode = error.code;
-        const errorMessage = error.message; //If unsuccessful error message will be displayed
+        //const errorMessage = error.message; //If unsuccessful error message will be displayed
+        //const err = translationFirebaseErrorsPTBR(error.code);
+        alert(errorCode);
       });
       
   };
@@ -69,7 +94,8 @@ function Login() {
       console.log(result);
       router.push('/Home'); //If successful login to home page
     }).catch((error) => {
-      console.log(error);
+      console.log(error.message);
+
     });
     
   };
@@ -79,7 +105,6 @@ function Login() {
   return (
     <div className=" flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100
     w-full h-full bg-no-repeat bg-cover bg-[url('https://cdn.pixabay.com/photo/2016/03/09/15/29/books-1246674_1280.jpg')]"> {/*Background image and styling*/}
-
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center ">
         <div className="bg-white rounded-2xl shadow-2xl flex w-2/3 max-w-4xl">
           <div className="w-3/5 p-5">
@@ -90,7 +115,7 @@ function Login() {
             </div>
             <div className='py-7'>
               <h2 className='text-3 font-bold mb-2 text-cyan-600' >Sign in to Account</h2>
-              <div className="border-2 w-10 inline-block border-cyan-600 mb-4"></div>
+              <div className="border-2 w-10 inline-block border-cyan-600 mb-4 "></div>
               <div className='flex justify-center p-3 mb-1'>
                 {/*Button to initiate Google Auth*/}
                 <a href="#" onClick={signInWithGoogle} className='border-2 border-gray-200 rounded-full p-3 mx-1 mr-3'>
@@ -109,12 +134,15 @@ function Login() {
                   <FaRegEnvelope className='text-gray-400 mr-2' />
                   {/* Email input to be validated in firebase*/}
                   <input type="email" name='email' placeholder='Email' onChange={(event) => { setLoginEmail(event.target.value) }} className='bg-gray-100 outline-none text-sm flex-1'></input>
+                  <p className=''>{emailError}</p>
                 </div>
                 <div className='bg-gray-100 w-64 p-2 flex items-center mb-4'>
                   {/* Password input*/}
                   <MdLockOutline className='text-gray-400 mr-2' />
                   {/* Password input to be validated in firebase*/}
-                  <input type="password" name='password' placeholder='Password' onChange={(event) => { setLoginPassword(event.target.value) }} className='bg-gray-100 outline-none text-sm flex-1'></input>
+                  <input type="password" name='password' placeholder='Password' onChange={(event) => { setLoginPassword(event.target.value) }} className='bg-gray-100 outline-none text-sm flex-1'>
+                    
+                  </input>
                 </div>
                 {/* Button to login and styling with hover effect, onClick event will validate information*/}
                 <a href='#' onClick={login} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 inline-block font-semibold 

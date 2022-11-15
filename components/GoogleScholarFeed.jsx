@@ -43,8 +43,7 @@ export default function List() {
 
     return (
         <div className=''>
-            <GSHeader/>
-            <div className='flex mr-60 ml-60'>
+            <div className='flex mr-60 ml-60 py-2'>
                 <FiRefreshCw
                     onClick={() => getPapers()}
                     className='btn text-cyan-600' />

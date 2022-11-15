@@ -10,7 +10,7 @@ import { db } from "../firebase-config";
 import { collection, getDocs, getDoc, addDoc, updateDoc, deleteDoc, doc, setDoc, query, where, onSnapshot } from "firebase/firestore";
 import { SP } from 'next/dist/shared/lib/utils';
 import { setDocumentLoading } from 'react-doc-viewer/build/state/actions';
-
+import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 
 
 function GoogleScholar() {
@@ -136,27 +136,37 @@ function GoogleScholar() {
   return (
 
     <div className=' bg-zinc-300 '>
-      <div className='sticky top-0 z-50 flex justify-between bg-zinc-300 px-4 py-2 shadow-sm '>
+      <div className='sticky top-0 z-50 flex justify-between bg-zinc-300 px-4 py-2 shadow-sm border-2 border-cyan-600 '>
 
-        {/* Google Scholar Search box*/}
-        <div className='flex-grow'>
-          <form className='flex items-center space-x-2 border border-cyan-600 rounded-lg bg-gray-100 py-1 px-3'>
-            <FaSearch className='text-cyan-600 h-6 w-10' />
-            <input className='bg-transparent outline-none text-cyan-600' type='text' placeholder='Search Google Scholar' onChange={(e) => setQuery(e.target.value)} />
-            <button type='submit' hidden onClick={handleClick} />
-          </form>
-        </div >
-        <div className='text-cyan-600 flex items-center px-7 '>
+      <div className='text-left mx- 10 font-bold mr-96'>
+        {/*Title*/}
+        <span className='text-cyan-600 text-2xl'>Genius</span>
+        <span className='text-black text-2xl'>Reviews</span>
+      </div>
+
+
+         {/* Google Scholar Search box*/}
+         <div className='flex-grow ml-10 w-60'>
+        <form className='flex items-center space-x-2 border border-cyan-600 rounded-lg bg-gray-100 py-1 px-3'>
+          <FaSearch className='text-cyan-600 h-6 w-10' />
+          <input className='bg-transparent outline-none text-cyan-600' type='text' placeholder='Search Google Scholar' onChange={(e) => setQuery(e.target.value)} />
+          <button type='submit' hidden onClick={handleClick} />
+        </form>
+      </div >
+
+      <div className='text-cyan-600 ml-96 flex items-center px-7 '>
           <a href='./Home' className='flex items-center'>
-            <FaHome className='h-6 w-6' />
-            <p className='ml-1 text-lg'>Home</p>
+            <FaRegArrowAltCircleLeft className='h-6 w-6' />
+            <p className='ml-1 text-lg'>Back</p>
           </a>
 
 
-        </div>
       </div>
 
-      <div className='mr-60 ml-60'>
+    
+      </div>
+
+      <div className='mr-60 ml-60 justify-center'>
         <ul>
           {papers.filter((paper) =>
             paper.data.query.toLowerCase().includes(queryR)

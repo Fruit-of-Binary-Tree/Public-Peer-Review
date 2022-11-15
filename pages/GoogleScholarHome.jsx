@@ -1,12 +1,14 @@
 import GoogleScholarFeed from '../components/GoogleScholarFeed';
 import React from 'react';
+import GSHeader from '../components/GSHeader';
 
 function GoogleScholarHome() {
 
     return (
 
-        <div className="relative bg-zinc-300">
-            <div className='flex-row'>
+        <div className=" bg-zinc-300">
+            <GSHeader/>
+            <div className='flex flex-row  max-w-5xl'>
                 <GoogleScholarFeed />
             </div>
 

@@ -4,7 +4,12 @@ import { db } from '../firebase-config'
 import Post from '../pages/Post';
 import { FiRefreshCw } from 'react-icons/fi'
 import { useSession } from "next-auth/react";
+
 import { addDoc, collection, getDocs, onSnapshot, orderBy, query, serverTimestamp, setDoc, doc, deleteDoc } from 'firebase/firestore';
+
+function refresh(){
+  window.location.reload();
+}
 
 export default function List() {
 
@@ -18,6 +23,9 @@ export default function List() {
   useEffect(() => {
     getPapers()
   }, [])
+  // onSnapshot(query(collection(db,'papers'),orderBy('timestamp','desc')), snapshot =>{
+  //   getPapers()
+  // })
 
   useEffect(() => {
     console.log(papers)
@@ -58,9 +66,9 @@ export default function List() {
             description={paper.data.description}
             url={paper.data.url}
             creator={paper.data.creator.name}
-            del = {<button className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold mr-5 text-white
-            hover:bg-white hover:text-cyan-600 transition ease-out duration-500'
-                onClick={() => { deleteUser(paper.id) }} > Delete </button>}
+            del = {<button className='ml-2 border-2 mt-5 border-cyan-600 rounded-full px-10 py-2 inline-block font-semibold mr-5 text-cyan-600
+            hover:bg-cyan-600 hover:text-white transition ease-out duration-500'
+                onClick={() => { deleteUser(paper.id);refresh() }} > Delete </button>}
           
           />
 

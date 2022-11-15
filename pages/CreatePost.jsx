@@ -6,6 +6,8 @@ import { Alert } from 'react-bootstrap'
 import PaperDataService from "../services/paper.services"
 import {auth} from '../firebase-config'
 import { useEffect } from "react";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 import {
   ref,
   uploadBytes,
@@ -15,6 +17,21 @@ import {
 } from "firebase/storage";
 import { storage } from "../firebase-config";
 import { v4 } from "uuid";
+
+function notif(){
+  toast('Post Created');
+  toast.configure();
+}
+
+function allfields()
+{
+  toast('Fill in all fields');
+  toast.configure();
+}
+
+function refresh(){
+  window.location.reload();
+}
 
 function Post() {
 
@@ -42,7 +59,7 @@ function Post() {
   const handleSubmit = async (e)  => {
     e.preventDefault();
     if(title == "" || author == "" || url == "" || description == "" || university == "" || citations == ""){
-      setMessage({ error: true, msg: " all fields are mandatory!"});
+      allfields();
       return;
     }
     const newPaper = {
@@ -76,11 +93,11 @@ function Post() {
     <form className='sticky flex-center top-16 z-50 border-gray-300 bg-zinc-200 p-2' onSubmit={handleSubmit}>
     {message?.msg && (
       <Alert>
-        {message?.error ? "Danger" : "Success"}
+        {message?.error ? "Danger" : "Success!"}
           {message?.msg}
       </Alert>
     )}
-    <div className=" flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100
+    <div className="absolute flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100
     w-full h-full bg-no-repeat bg-cover bg-[url('https://cdn.pixabay.com/photo/2016/03/09/15/29/books-1246674_1280.jpg')]">
     
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center ">
@@ -113,7 +130,7 @@ function Post() {
                     <input type="text" name='tags' placeholder='Tags' value = {citations} onChange = {(e) => setCitation(e.target.value)} className='bg-gray-100 outline-none text-sm '></input>
                 </div>
 
-                <div className='bg-gray-100 w-96 h-32 p-2 flex items-start mb-3 rounded-md'>
+                <div className='bg-gray-100 w-96 h-32 p-2 flex items-start mb-3 rounded-md '>
                     <FiAlignJustify className='h-5 w-5 text-gray-400 align-center mr-2'/>
                     <input type="text" name='description' placeholder='Description of publication' value = {description} onChange = {(e) => setDescription(e.target.value)} className='bg-gray-100 outline-none text-sm flex-1'></input>
                 </div>
@@ -122,14 +139,9 @@ function Post() {
                     <FaLink className='h-4 w-4 text-gray-400 align-center mr-2'/>
                     <input type="text" name='url' placeholder='Url' value = {url} onChange = {(e) => setURL(e.target.value)} className='bg-gray-100 outline-none text-sm flex-1'></input>
                 </div>
-
-                <label className="text-center form-label w-64 px-44 text-white" form="customFile">OR</label>
-
-                <input className="form-control border-2 mt-3 border-white rounded-lg px-4 py-2 inline-block font-semibold" 
-                type="file" id="customFile" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
                 
                 <div className='flex flex-row px-14'>
-                <button type='submit' onClick={uploadFile}
+                <button type='submit' onClick={function(){uploadFile()}}
                 className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold mr-5 text-white
                 hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Submit</button>  
                 

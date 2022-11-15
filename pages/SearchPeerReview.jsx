@@ -43,9 +43,9 @@ export default function SearchPeerReview() {
 
   return (
 
-    <div className=' bg-zinc-300 '>
-      <div className='sticky top-0 z-50 flex justify-between bg-zinc-300 px-4 py-2 shadow-sm '>
-        <div className='text-left mx- 10 font-bold'>
+    <div className=''>
+      <div className='sticky top-0 z-50 flex justify-between bg-zinc-300 px-4 py-2 shadow-sm border-2 border-cyan-600'>
+        <div className='text-left mx- 10 font-bold mr-96'>
           {/*Title*/}
           <span className='text-cyan-600 text-2xl'>Genius</span>
           <span className='text-black text-2xl'>Reviews</span>
@@ -63,7 +63,7 @@ export default function SearchPeerReview() {
         </div>
 
         {/* Home icon and styling used for refreshing page */}
-        <div className='text-cyan-600 flex items-center px-7 '>
+        <div className='text-cyan-600 flex items-center px-7 ml-96 '>
           <a href='./Home' className='flex items-center'>
             <FaHome className='h-6 w-6' />
             <p className='ml-1 text-lg'>Home</p>
@@ -77,7 +77,7 @@ export default function SearchPeerReview() {
 
 
 
-      <div className='mr-60 ml-60'>
+      <div className='relative mr-60 ml-60'>
         <ul>
           {papers.filter((paper) =>
             paper.data.author.toLowerCase().includes(query)

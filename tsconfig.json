@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "__tests__/PostBox.test.js"
-, "pages/Post.jsx", "pages/GoogleScholar.jsx", "pages/CreatePost.jsx"  ],
+, "pages/Post.jsx", "pages/GoogleScholar.jsx", "pages/CreatePost.jsx", "pages/signup.tsx"  ],
   "exclude": [
     "components/Feed.jsx", "node_modules",
   ],

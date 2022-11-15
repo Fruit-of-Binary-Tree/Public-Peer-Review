@@ -127,13 +127,13 @@ function GoogleScholarPost({ id, username, caption, url, title, author, viewPdf,
 
     return (
 
-        <div className='bg-gray-100 my-7 border rounded-lg border-cyan-600 max-w-5xl'>
+        <div className='bg-gray-100 my-7 border rounded-lg border-cyan-600 max-w-7xl'>
             {/* Header */}
             <div className='flex items-center p-5'>
                 <p className='flex-1 font-bold'>{creator}</p>
             </div>
 
-            <div className='p-5 truncate'>
+            <div className='p-5 '>
                 <span className='p-5 truncate font-semibold text-cyan-600'>Author:</span>
                 {author}
             </div>
@@ -145,21 +145,21 @@ function GoogleScholarPost({ id, username, caption, url, title, author, viewPdf,
             </div>
 
             {/*Description */}
-            <div className='p-5 truncate'>
-                <span className='p-5 truncate font-semibold text-cyan-600'>Description:</span>
+            <div className='p-8'>
+                <span className=' font-semibold text-cyan-600'>Description:</span>
                 {description}
             </div>
 
             {/*URL */}
-            <div className='p-5 truncate'>
-                <span className='p-5 truncate font-semibold text-cyan-600'>URL:</span>
+            <div className='p-8 '>
+                <span className=' font-semibold text-cyan-600'>URL:</span>
                 {url}
             </div>
 
 
 
             {/*Buttons */}
-            <div className='px-4 pt-4 pb-4'>
+            <div className='ml-5 px-4 pt-4 pb-4'>
                 <div className='flex space-x-4 '>
                     <p>If you liked the readibility please like the post</p>
                     {

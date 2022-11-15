@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 import {
   createUserWithEmailAndPassword,
@@ -13,6 +15,15 @@ import { MdLockOutline } from 'react-icons/md'
 
 // signup function, get users email and password
 //manually creating a users profile to be stored in firebase
+
+
+function notif(){
+    toast('User Created');
+    toast.configure();
+}
+
+
+
 function signup() {
 
   const [registerEmail, setRegisterEmail] = useState("");
@@ -20,14 +31,35 @@ function signup() {
 
   const register = async () => {
 
-    const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+    const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+    .catch((error) => {
+      // switch(error.coode)
+      // {
+      //   case "auth/invalid-email":
+      //   case "auth/user-disabled":
+      //   case "auth/user-not-found":
+      //     seteError(error.message);
+      //     break;
+      //   case "auth/wrong-password":
+      //     setpError(error.message);
+        
+      //     break;
+
+      // }
+      const errorCode = error.code;
+      //const errorMessage = error.message; //If unsuccessful error message will be displayed
+      //const err = translationFirebaseErrorsPTBR(error.code);
+      alert(errorCode);
+    });
     console.log(user);
     
-
   };
+
 
   /*UI Component*/
   return (
+
+    
 
     <div className=" flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100
     w-full h-full bg-no-repeat bg-cover bg-[url('https://cdn.pixabay.com/photo/2016/03/09/15/29/books-1246674_1280.jpg')]"> {/*Background image*/}
@@ -79,7 +111,7 @@ function signup() {
                 <MdLockOutline className='text-gray-400 mr-2' />
                 <input type="password" name='sPassword' placeholder='Password Confirmation' className='bg-gray-100 outline-none text-sm flex-1'></input>
               </div>
-              <button onClick={register} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 mt-2 inline-block font-semibold 
+              <button onClick={function(){ notif(); register()}} className='text-cyan-600 border-2 border-cyan-600 rounded-full px-12 py-2 mt-2 inline-block font-semibold 
                     hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Sign Up</button>
             </div>
 

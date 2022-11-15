@@ -13,6 +13,7 @@ import { Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import {HeartIcon} from "@heroicons/react/outline"
 import {HeartIcon as HeartIconFilled} from "@heroicons/react/solid"
+
 import {
   ref,
   uploadBytes,
@@ -25,6 +26,7 @@ import { v4 } from "uuid";
 //{id:any,username:any,caption:any,key:any,title:any,author:any,url:any,viewPdf:any,doc:any}
 function Post({id,username,caption,url,title,author, viewPdf,creator, description, del}) 
 {
+  
   // const {data:session}=useSession();
   const [comment, setComment] = useState("");
   const [comments,setComments] = useState([]);
@@ -148,49 +150,65 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
     }
   };
 
+  function refresh(){
+    window.location.reload();
+  }
  
 
   return (
     
+    
     <div className='bg-gray-100 my-7 border rounded-lg border-cyan-600'>
       {/* Header */}
-      <div className='flex items-center p-5'>
-        <p className='flex-1 font-bold'>{creator}</p>
-      </div>
 
-      <div className='p-5 truncate'>
-      <span className='p-5 truncate font-semibold text-cyan-600'>Author:</span>
-        {author}
-      </div>
-
-      {/*title */}
-      <div className='p-5 truncate'>
-      <span className='p-5 truncate font-semibold text-cyan-600'>Title:</span>
+       {/*title */}
+       <div className='p-5 text-center  '>
+      <span className='p-5 font-semibold text-cyan-600 '></span>
+      <span className='font-lato text-3xl font-cabin'>
         {title}
+      </span>
       </div>
+
+      <div className='truncate text-center'>
+      <span className='p-5 truncate font-semibold text-cyan-600'></span>
+      <span className='text-2xl font-lato'>
+        {author}
+      </span>
+      </div>
+      
+      <div className='flex items-center p-5'>
+        <p className=' flex-1 ml-4 italic'>Posted by: {creator}</p>
+      </div>
+
+    
+
 
       {/*Description */}
-      <div className='p-5 truncate'>
-      <span className='p-5 truncate font-semibold text-cyan-600'>Description:</span>
+      <div className='p-5'>
+      <span className='p-5 font-semibold text-cyan-600'>Description:</span>
+      <span className='mt-2 ml-5 flex text-md font-dm'>
         {description}
+      </span>
       </div>
 
       {/*URL */}
-      <div className='p-5 truncate'>
-      <span className='p-5 truncate font-semibold text-cyan-600'>URL:</span>
+      <div className='p-5 '>
+      <span className='p-5 font-semibold text-cyan-600'>URL:</span>
+      <span className='mt-2 ml-5 flex text-md font-dm'>
         {url}
+      </span>
       </div>
 
     {/*DELETE */}
-    <div className='p-5 truncate'>
+    <div className='p-5 truncate '>
         {del}
-      </div>
+    </div>
 
 
       {/*Buttons */}
-      <div className='px-4 pt-4 pb-4'>
-        <div className='flex space-x-4 '>
-          <p>If you liked the readibility please like the post</p>
+      <div className='ml-4 px-4 pt-4 pb-4'>
+        <div className='flex space-x-4  text-cyan-600 '>
+          <p>If you liked the readibility, please like the post</p>
           {
             hasLiked ? (
               <HeartIconFilled onClick={likePost} className='btn text-red-500' />
@@ -199,8 +217,8 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
             )}
         </div>
 
-        <div className='flex space-x-4 '>
-          <p>If you liked the usefulness please like the post</p>
+        <div className='flex space-x-4 text-cyan-600'>
+          <p>If you liked the usefulness, please like the post</p>
           {
             hasLiked2 ? (
               <HeartIconFilled onClick={likePost2} className='btn text-red-500' />
@@ -209,38 +227,24 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
             )}
         </div>
 
-        <div>
-        <input className="form-control border-2 mt-3 border-white rounded-lg px-4 py-2 inline-block font-semibold" 
-                type="file" id="customFile" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
-        <button onClick={uploadFile}
-                className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold mr-5 text-white
-                hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Upload file</button>  
-        
-        
-        </div>
+  
 
-        {imageUrls.map((url) => {
+        {/* {imageUrls.map((url) => {
         return <embed src={url} />;
-      })}
-
-      <a href='./Bibtex' 
-                className='border-2 mt-5 border-white rounded-full px-10 py-2 inline-block font-semibold text-white
-                hover:bg-white hover:text-cyan-600 transition ease-out duration-500'>Bibtex</a>  
-
-          
+      })} */}
         
       </div>
 
-      <p className='flex space-between items-center p-4'>
+      <p className='ml-4 flex space-between items-center p-4'>
         {likes.length > 0 && (
-          <p className="font-bold mb-1"> The average liking of the paper is : {(likes.length + likes2.length)/2} </p>
+          <p className="font-bold mb-1 text-cyan-600"> The average liking of the paper is : {(likes.length + likes2.length)/2} </p>
         )}
       </p>
       
 
       {/*Comments */}
       {comments.length >0 && (
-        <div className=' ml-2 h-20 overflow-y-scroll scrollbar-thumb-black scrollbar-thin'>
+        <div className='mr-4 ml-6 h-20 overflow-y-scroll scrollbar-thumb-black scrollbar-thin'>
           {comments.map((comment) =>(
             <div key={comment.id} className="flex items-center space-x-2 mb-3">
             <span></span>
@@ -254,7 +258,7 @@ function Post({id,username,caption,url,title,author, viewPdf,creator, descriptio
       )}
 
       {/*input box for comments */}
-      <form className='flex space-between items-center p-4'>
+      <form className='ml-4 mr-4 flex space-between items-center p-4'>
         <input
         type="text"
         value={comment}

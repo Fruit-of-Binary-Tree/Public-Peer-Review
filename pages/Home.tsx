@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { VscCircleFilled } from "react-icons/vsc";
 
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from '../firebase-config.js'
@@ -48,13 +49,19 @@ function Home() {
     <div className="relative bg-zinc-300">
 
       <Header /> {/*Header component containing Search, logout, title and user settings */}
-      <div className='flex items-center justify-center space-x-2 border bg-cyan-600 py-1 px-3'>
+      <div className='flex items-center justify-center space-x-2  '>
       </div>
 
       <div className='flex items-center justify-center space-x-2 border bg-zinc-300 py-1 px-3'>
-        <p className=' flex text-center text-lg text-bold text-cyan-600'>
+      <div className='flex text-sm items-center text-cyan-600'>
+        <VscCircleFilled/>
+        </div>
+        <p className=' flex font-semibold text-center text-lg text-bold text-cyan-600'> 
           Welcome to Genius Reviews, post your academic work and let your peers give you feedback
         </p>
+        <div className='flex text-sm items-center text-cyan-600'>
+        <VscCircleFilled/>
+        </div>
       </div>
 
       <div className='flex-row'>
@@ -64,7 +71,9 @@ function Home() {
             className='border-2 text-cyan-600 border-cyan-600 rounded-md mt-2 px-12 py-2 inline-block font-semibold
               hover:bg-cyan-600 hover:text-white transition ease-out duration-500'>Create a Post</a>
         </div>
+
         <Feed />
+          
 
       </div>
 
