@@ -43,5 +43,5 @@ npm install --save-dev jest jest-environment-jsdom @testing-library/react @testi
 
 # To run and build application:
 
-npm run build
+npm run build <br />
 npm run start
