@@ -4,7 +4,7 @@
 
 [![Running Code Coverage](https://github.com/Fruit-of-Binary-Tree/Public-Peer-Review/actions/workflows/codecov.yml/badge.svg)](https://github.com/Fruit-of-Binary-Tree/Public-Peer-Review/actions/workflows/codecov.yml)
 
-# Packages to install:
+Packages to install:
 
 npm install react <br />
 npm install firebase <br />
