@@ -26,14 +26,8 @@ npm install react-scripts <br />
 npm install pdfjs-dist@2.15.349 <br />
 npm install @react-pdf-viewer/core@3.7.0 <br />
 npm install @react-pdf-viewer/default-layout <br />
+npm install express <br/>
 
 packages to install for testing: <br />
 npm install g jest <br />
 yarn add --dev @babel/preset-typescript <br />
-
-
-
-
-
-
-
