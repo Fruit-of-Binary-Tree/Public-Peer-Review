@@ -25,5 +25,11 @@ npm install pdfjs-dist@2.15.349 <br />
 npm install @react-pdf-viewer/core@3.7.0 <br />
 npm install @react-pdf-viewer/default-layout <br />
 
-
+yarn add react-toastify@8.2.0
+npm install react-toastify@8.2.0
+yarn add react-toastify
+npm install react-toastify
+yarn add react-toast-notifications
+npm install react-toast-notifications
+npm install --save react-notification-alert
 
