@@ -32,7 +32,7 @@ packages to install for testing: <br />
 npm install g jest <br />
 yarn add --dev @babel/preset-typescript <br />
 
-
+npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom babel-jest identity-obj-proxy
 
 
 
